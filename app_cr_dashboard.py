@@ -307,17 +307,19 @@ left2, right2 = st.columns([1, 1])
 
 with left2:
     st.markdown('<div class="section-card">', unsafe_allow_html=True)
-    st.subheader("Status CR Mengikut Bahagian")
+    st.subheader("Selesai vs Aktif Mengikut Bahagian")
 
     bahagian_status = filtered.copy()
 
-   bahagian_status = bahagian_status[
-    bahagian_status["Status Clean"] != "GUGUR"
-].copy()
+    # Exclude GUGUR dan DITANGGUHKAN daripada chart ini
+    bahagian_status = bahagian_status[
+        ~bahagian_status["Status Clean"].isin(["GUGUR", "DITANGGUHKAN"])
+    ].copy()
 
-bahagian_status["Ringkasan Status"] = bahagian_status["Status Clean"].apply(
-    lambda x: "Selesai" if x == "SELESAI" else "Belum Selesai"
-)
+    # Group status kepada Selesai / Belum Selesai
+    bahagian_status["Ringkasan Status"] = bahagian_status["Status Clean"].apply(
+        lambda x: "Selesai" if x == "SELESAI" else "Belum Selesai"
+    )
 
     bahagian_summary = (
         bahagian_status
@@ -353,7 +355,7 @@ bahagian_status["Ringkasan Status"] = bahagian_status["Status Clean"].apply(
             x=bahagian_pivot["Belum Selesai"],
             name="Belum Selesai",
             orientation="h",
-            marker=dict(color="#A7C7E7"),  # pastel blue
+            marker=dict(color="#A7C7E7"),
             text=bahagian_pivot["Belum Selesai"],
             textposition="inside",
         )
@@ -365,7 +367,7 @@ bahagian_status["Ringkasan Status"] = bahagian_status["Status Clean"].apply(
             x=bahagian_pivot["Selesai"],
             name="Selesai",
             orientation="h",
-            marker=dict(color="#B7E4C7"),  # pastel green
+            marker=dict(color="#B7E4C7"),
             text=bahagian_pivot["Selesai"],
             textposition="inside",
         )
@@ -382,7 +384,6 @@ bahagian_status["Ringkasan Status"] = bahagian_status["Status Clean"].apply(
 
     st.plotly_chart(fig_bahagian_status, use_container_width=True)
     st.markdown('</div>', unsafe_allow_html=True)
-
 
 with right2:
     st.markdown('<div class="section-card">', unsafe_allow_html=True)
