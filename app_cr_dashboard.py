@@ -278,46 +278,6 @@ with right2:
     )
     st.markdown('</div>', unsafe_allow_html=True)
 
-# =========================
-# TIMELINE SETIAP CR
-# =========================
-st.markdown('<div class="section-card">', unsafe_allow_html=True)
-st.subheader("Timeline Setiap CR")
-st.caption("Untuk CR belum selesai, tarikh tamat timeline dikira sehingga hari ini. Untuk CR selesai, sistem cuba ambil tarikh selesai daripada column Nota.")
-
-timeline_df = filtered.dropna(subset=["Tarikh Mula", "Tarikh Tamat Timeline"]).copy()
-
-# Elak timeline terlalu padat: user boleh pilih jumlah row
-max_rows = st.slider("Jumlah CR dipaparkan dalam timeline", min_value=10, max_value=min(168, max(10, len(timeline_df))), value=min(60, max(10, len(timeline_df))), step=10)
-
-timeline_df = timeline_df.sort_values(["Tarikh Mula", "No. CCB"]).head(max_rows)
-
-fig_timeline = px.timeline(
-    timeline_df,
-    x_start="Tarikh Mula",
-    x_end="Tarikh Tamat Timeline",
-    y="Label CR",
-    color="Kumpulan Status",
-    hover_data={
-        "No. CCB": True,
-        "Bahagian": True,
-        "Status Clean": True,
-        "Tarikh Mula": True,
-        "Tarikh Tamat Timeline": True,
-        "Tempoh Timeline": True,
-        "Nota": True,
-        "Label CR": False,
-    },
-)
-fig_timeline.update_yaxes(autorange="reversed")
-fig_timeline.update_layout(
-    height=max(520, max_rows * 22),
-    margin=dict(l=10, r=10, t=30, b=10),
-    xaxis_title="Tarikh",
-    yaxis_title="CR",
-)
-st.plotly_chart(fig_timeline, use_container_width=True)
-st.markdown('</div>', unsafe_allow_html=True)
 
 # =========================
 # DETAIL TABLE
