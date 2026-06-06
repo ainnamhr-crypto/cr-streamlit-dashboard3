@@ -386,14 +386,91 @@ st.subheader("Selesai vs Aktif Mengikut Bahagian")
 st.plotly_chart(fig_bahagian_status, use_container_width=True)
 st.markdown('</div>', unsafe_allow_html=True)
 
-
-# Chart full row: Aging Bucket
+# =========================
+# AGING BUCKET - CR AKTIF
+# =========================
 st.markdown('<div class="section-card">', unsafe_allow_html=True)
 st.subheader("Aging Bucket - CR Aktif")
-...
-st.plotly_chart(fig_aging, use_container_width=True)
-...
+
+aging_df = filtered[
+    (filtered["Kumpulan Status"] == "Belum Selesai")
+    & (filtered["Status"].astype(str).str.upper().str.strip() != "DITANGGUHKAN")
+].copy()
+
+bucket_order = [
+    "0-14 hari",
+    "15-30 hari",
+    "31-60 hari",
+    "61-90 hari",
+    "91-120 hari",
+    "121-180 hari",
+    "181-365 hari",
+    ">365 hari",
+    "Tiada tarikh",
+]
+
+aging_summary = (
+    aging_df["Aging Bucket"]
+    .value_counts()
+    .reindex(bucket_order)
+    .fillna(0)
+    .reset_index()
+)
+
+aging_summary.columns = ["Aging Bucket", "Jumlah"]
+
+fig_aging = px.bar(
+    aging_summary,
+    x="Aging Bucket",
+    y="Jumlah",
+    text="Jumlah",
+    color="Aging Bucket",
+    color_discrete_sequence=[
+        "#B7E4C7",
+        "#D8F3DC",
+        "#FFF1A8",
+        "#FFDAC1",
+        "#FFB7B2",
+        "#F6C6EA",
+        "#C7CEEA",
+        "#A7C7E7",
+        "#D9D9D9",
+    ],
+)
+
+fig_aging.update_layout(
+    height=430,
+    margin=dict(l=10, r=10, t=30, b=10),
+    xaxis_title="Aging Bucket",
+    yaxis_title="Jumlah CR",
+    showlegend=False,
+)
+
+st.plotly_chart(
+    fig_aging,
+    use_container_width=True,
+    key="chart_aging_bucket_full_row"
+)
+
+selected_bucket = st.selectbox(
+    "Klik/pilih bucket untuk lihat senarai CR",
+    ["Semua"] + bucket_order,
+    key="selected_aging_bucket",
+)
+
+aging_table = aging_df.copy()
+
+if selected_bucket != "Semua":
+    aging_table = aging_table[aging_table["Aging Bucket"] == selected_bucket]
+
+st.dataframe(
+    aging_table,
+    use_container_width=True,
+    hide_index=True,
+)
+
 st.markdown('</div>', unsafe_allow_html=True)
+
 
 
 # =========================
