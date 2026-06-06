@@ -358,6 +358,9 @@ st.markdown('</div>', unsafe_allow_html=True)
 # =========================
 # PRIORITY KPI
 # =========================
+st.markdown('<div class="section-card">', unsafe_allow_html=True)
+st.subheader("Aging Bucket - CR Aktif")
+
 active_status = ["BAHARU", "SRS", "SDD", "TPA", "PEMBANGUNAN", "SIT", "UAT"]
 active_df = filtered[filtered["Status Clean"].isin(active_status)].copy()
 
@@ -393,8 +396,7 @@ st.write("")
 # =========================
 # AGING BUCKET - CR AKTIF
 # =========================
-st.markdown('<div class="section-card">', unsafe_allow_html=True)
-st.subheader("Aging Bucket - CR Aktif")
+
 
 aging_df = filtered[
     (filtered["Kumpulan Status"] == "Belum Selesai")
