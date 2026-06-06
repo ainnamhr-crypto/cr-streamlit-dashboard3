@@ -247,60 +247,6 @@ if tiada_tarikh > 0:
 st.write("")
 
 # =========================
-# STATUS BREAKDOWN
-# =========================
-st.markdown('<div class="section-card">', unsafe_allow_html=True)
-st.subheader("Pecahan Mengikut Status")
-
-status_summary = (
-    filtered["Status"]
-    .fillna("Tiada Status")
-    .astype(str)
-    .str.upper()
-    .str.strip()
-    .value_counts()
-    .reset_index()
-)
-
-status_summary.columns = ["Status", "Jumlah"]
-
-pastel_colors = [
-    "#A7C7E7",  # pastel blue
-    "#B5EAD7",  # pastel mint
-    "#FFDAC1",  # pastel peach
-    "#E2F0CB",  # pastel green
-    "#C7CEEA",  # pastel lavender
-    "#FFB7B2",  # pastel pink
-    "#F3D1F4",  # pastel purple
-    "#FFF1A8",  # pastel yellow
-    "#D5AAFF",  # soft violet
-    "#BDE0FE",  # baby blue
-]
-
-fig_status = px.pie(
-    status_summary,
-    names="Status",
-    values="Jumlah",
-    hole=0.45,
-    color_discrete_sequence=pastel_colors,
-)
-
-fig_status.update_traces(
-    textposition="inside",
-    textinfo="label+value",
-    pull=[0.02] * len(status_summary),
-)
-
-fig_status.update_layout(
-    height=480,
-    margin=dict(l=10, r=10, t=30, b=10),
-    legend_title_text="Status",
-)
-
-st.plotly_chart(fig_status, use_container_width=True)
-st.markdown('</div>', unsafe_allow_html=True)
-
-# =========================
 # STATUS CR MENGIKUT BAHAGIAN
 # =========================
 st.markdown('<div class="section-card">', unsafe_allow_html=True)
@@ -386,6 +332,62 @@ st.plotly_chart(
 )
 
 st.markdown('</div>', unsafe_allow_html=True)
+
+
+# =========================
+# STATUS BREAKDOWN
+# =========================
+st.markdown('<div class="section-card">', unsafe_allow_html=True)
+st.subheader("Pecahan Mengikut Status")
+
+status_summary = (
+    filtered["Status"]
+    .fillna("Tiada Status")
+    .astype(str)
+    .str.upper()
+    .str.strip()
+    .value_counts()
+    .reset_index()
+)
+
+status_summary.columns = ["Status", "Jumlah"]
+
+pastel_colors = [
+    "#A7C7E7",  # pastel blue
+    "#B5EAD7",  # pastel mint
+    "#FFDAC1",  # pastel peach
+    "#E2F0CB",  # pastel green
+    "#C7CEEA",  # pastel lavender
+    "#FFB7B2",  # pastel pink
+    "#F3D1F4",  # pastel purple
+    "#FFF1A8",  # pastel yellow
+    "#D5AAFF",  # soft violet
+    "#BDE0FE",  # baby blue
+]
+
+fig_status = px.pie(
+    status_summary,
+    names="Status",
+    values="Jumlah",
+    hole=0.45,
+    color_discrete_sequence=pastel_colors,
+)
+
+fig_status.update_traces(
+    textposition="inside",
+    textinfo="label+value",
+    pull=[0.02] * len(status_summary),
+)
+
+fig_status.update_layout(
+    height=480,
+    margin=dict(l=10, r=10, t=30, b=10),
+    legend_title_text="Status",
+)
+
+st.plotly_chart(fig_status, use_container_width=True)
+st.markdown('</div>', unsafe_allow_html=True)
+
 
 # =========================
 # AGING BUCKET - CR AKTIF
