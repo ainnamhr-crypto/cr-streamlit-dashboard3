@@ -176,8 +176,12 @@ if search_text:
 # =========================
 total_cr = len(filtered)
 selesai = (filtered["Kumpulan Status"] == "Selesai").sum()
-belum = (filtered["Kumpulan Status"] == "Belum Selesai").sum()
+tangguh = (filtered["Status Clean"] == "DITANGGUHKAN").sum()
 gugur = (filtered["Kumpulan Status"] == "Gugur").sum()
+
+active_status = ["BAHARU", "SRS", "SDD", "TPA", "PEMBANGUNAN", "SIT", "UAT"]
+aktif = filtered["Status Clean"].isin(active_status).sum()
+
 completion_rate = (selesai / total_cr * 100) if total_cr else 0
 
 c1, c2, c3, c4, c5 = st.columns(5)
