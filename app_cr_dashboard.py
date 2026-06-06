@@ -140,7 +140,7 @@ def load_data(uploaded_file=None):
 # HEADER
 # =========================
 st.markdown('<div class="main-title">Dashboard Change Request (CR) mySIKAP</div>', unsafe_allow_html=True)
-st.markdown('<div class="sub-title">Ringkasan jumlah CR, status siap/belum siap, aging, dan timeline setiap CR.</div>', unsafe_allow_html=True)
+#st.markdown('<div class="sub-title">Ringkasan jumlah CR, status siap/belum siap, aging, dan timeline setiap CR.</div>', unsafe_allow_html=True)#
 
 # =========================
 # SIDEBAR UPLOAD + FILTER
