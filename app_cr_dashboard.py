@@ -379,10 +379,6 @@ fig_bahagian_status.update_layout(
     legend_title_text="Status",
 )
 
-st.plotly_chart(fig_bahagian_status, use_container_width=True)
-st.markdown('</div>', unsafe_allow_html=True)
-
-
 # Chart full row: Selesai vs Aktif Mengikut Bahagian
 st.markdown('<div class="section-card">', unsafe_allow_html=True)
 st.subheader("Selesai vs Aktif Mengikut Bahagian")
