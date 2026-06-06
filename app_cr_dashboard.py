@@ -212,6 +212,41 @@ for col, (label, value) in zip([c1, c2, c3, c4, c5], metrics):
 st.write("")
 
 # =========================
+# PRIORITY KPI
+# =========================
+active_status = ["BAHARU", "SRS", "SDD", "TPA", "PEMBANGUNAN", "SIT", "UAT"]
+active_df = filtered[filtered["Status Clean"].isin(active_status)].copy()
+
+aktif_180 = (active_df["Hari Berlalu"] > 180).sum()
+aktif_365 = (active_df["Hari Berlalu"] > 365).sum()
+tiada_tarikh = active_df["Tarikh Mula"].isna().sum()
+
+p1, p2, p3 = st.columns(3)
+
+priority_metrics = [
+    ("CR Aktif >180 Hari", aktif_180),
+    ("CR Aktif >365 Hari", aktif_365),
+    ("CR Aktif Tiada Tarikh", tiada_tarikh),
+]
+
+for col, (label, value) in zip([p1, p2, p3], priority_metrics):
+    with col:
+        st.markdown(
+            f"""
+            <div class="metric-card">
+                <div class="metric-label">{label}</div>
+                <div class="metric-value">{value}</div>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+
+if tiada_tarikh > 0:
+    st.warning(f"Terdapat {tiada_tarikh} CR aktif tanpa Tarikh Permohonan. Sila kemaskini data untuk aging yang lebih tepat.")
+
+st.write("")
+
+# =========================
 # CHARTS ROW 1
 # =========================
 left, right = st.columns([1, 1])
