@@ -310,6 +310,30 @@ with left2:
     st.plotly_chart(fig_bahagian_aktif, use_container_width=True)
     st.markdown('</div>', unsafe_allow_html=True)
 
+# =========================
+# TOP 10 LONGEST ACTIVE CR
+# =========================
+st.markdown('<div class="section-card">', unsafe_allow_html=True)
+st.subheader("Top 10 CR Paling Lama Aktif")
+
+active_status = ["BAHARU", "SRS", "SDD", "TPA", "PEMBANGUNAN", "SIT", "UAT"]
+top_aging_df = filtered[
+    filtered["Status Clean"].isin(active_status)
+].copy()
+
+top_aging_df = top_aging_df.dropna(subset=["Hari Berlalu"])
+top_aging_df = top_aging_df.sort_values("Hari Berlalu", ascending=False).head(10)
+
+st.dataframe(
+    top_aging_df[
+        ["No. CCB", "Bahagian", "Tajuk CR", "Status", "Tarikh Mula", "Hari Berlalu", "Aging Bucket", "Nota"]
+    ],
+    use_container_width=True,
+    hide_index=True,
+)
+
+st.markdown('</div>', unsafe_allow_html=True)
+
 with right2:
     st.markdown('<div class="section-card">', unsafe_allow_html=True)
     st.subheader("Aging Bucket - Belum Selesai")
