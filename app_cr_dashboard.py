@@ -286,7 +286,7 @@ fig_status = px.pie(
 
 fig_status.update_traces(
     textposition="inside",
-    textinfo="label+value+percent",
+    textinfo="label+value",
     pull=[0.02] * len(status_summary),
 )
 
