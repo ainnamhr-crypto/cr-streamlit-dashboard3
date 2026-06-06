@@ -68,14 +68,18 @@ def extract_date_from_note(text):
 def aging_bucket(days):
     if pd.isna(days):
         return "Tiada tarikh"
+    if days <= 14:
+        return "0-14 hari"
     if days <= 30:
-        return "0-30 hari"
+        return "15-30 hari"
     if days <= 60:
         return "31-60 hari"
     if days <= 90:
         return "61-90 hari"
+    if days <= 120:
+        return "91-120 hari"
     if days <= 180:
-        return "91-180 hari"
+        return "121-180 hari"
     if days <= 365:
         return "181-365 hari"
     return ">365 hari"
