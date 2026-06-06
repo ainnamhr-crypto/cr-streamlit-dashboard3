@@ -246,36 +246,58 @@ if tiada_tarikh > 0:
 st.write("")
 
 # =========================
-# CHARTS ROW 1
+# STATUS BREAKDOWN
 # =========================
-left, right = st.columns([1, 1])
+st.markdown('<div class="section-card">', unsafe_allow_html=True)
+st.subheader("Pecahan Mengikut Status")
 
-with left:
-    st.markdown('<div class="section-card">', unsafe_allow_html=True)
-    st.subheader("Status Siap vs Belum Siap")
-    pie_data = filtered[filtered["Kumpulan Status"].isin(["Selesai", "Belum Selesai"])]
-    pie_summary = pie_data["Kumpulan Status"].value_counts().reset_index()
-    pie_summary.columns = ["Kumpulan Status", "Jumlah"]
-    fig_pie = px.pie(
-        pie_summary,
-        names="Kumpulan Status",
-        values="Jumlah",
-        hole=0.45,
-    )
-    fig_pie.update_traces(textposition="inside", textinfo="percent+label+value")
-    fig_pie.update_layout(height=380, margin=dict(l=10, r=10, t=30, b=10))
-    st.plotly_chart(fig_pie, use_container_width=True)
-    st.markdown('</div>', unsafe_allow_html=True)
+status_summary = (
+    filtered["Status"]
+    .fillna("Tiada Status")
+    .astype(str)
+    .str.upper()
+    .str.strip()
+    .value_counts()
+    .reset_index()
+)
 
-with right:
-    st.markdown('<div class="section-card">', unsafe_allow_html=True)
-    st.subheader("Pecahan Mengikut Status")
-    status_summary = filtered["Status Clean"].value_counts().reset_index()
-    status_summary.columns = ["Status", "Jumlah"]
-    fig_status = px.bar(status_summary, x="Jumlah", y="Status", orientation="h", text="Jumlah")
-    fig_status.update_layout(height=380, margin=dict(l=10, r=10, t=30, b=10), yaxis={"categoryorder": "total ascending"})
-    st.plotly_chart(fig_status, use_container_width=True)
-    st.markdown('</div>', unsafe_allow_html=True)
+status_summary.columns = ["Status", "Jumlah"]
+
+pastel_colors = [
+    "#A7C7E7",  # pastel blue
+    "#B5EAD7",  # pastel mint
+    "#FFDAC1",  # pastel peach
+    "#E2F0CB",  # pastel green
+    "#C7CEEA",  # pastel lavender
+    "#FFB7B2",  # pastel pink
+    "#F3D1F4",  # pastel purple
+    "#FFF1A8",  # pastel yellow
+    "#D5AAFF",  # soft violet
+    "#BDE0FE",  # baby blue
+]
+
+fig_status = px.pie(
+    status_summary,
+    names="Status",
+    values="Jumlah",
+    hole=0.45,
+    color_discrete_sequence=pastel_colors,
+)
+
+fig_status.update_traces(
+    textposition="inside",
+    textinfo="label+value+percent",
+    pull=[0.02] * len(status_summary),
+)
+
+fig_status.update_layout(
+    height=480,
+    margin=dict(l=10, r=10, t=30, b=10),
+    legend_title_text="Status",
+)
+
+st.plotly_chart(fig_status, use_container_width=True)
+st.markdown('</div>', unsafe_allow_html=True)
 
 # =========================
 # CHARTS ROW 2: BAHAGIAN + AGING
