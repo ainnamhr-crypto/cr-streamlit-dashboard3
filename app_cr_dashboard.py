@@ -307,29 +307,80 @@ left2, right2 = st.columns([1, 1])
 
 with left2:
     st.markdown('<div class="section-card">', unsafe_allow_html=True)
-    st.subheader("CR Aktif Mengikut Bahagian")
+    st.subheader("Status CR Mengikut Bahagian")
 
-    active_status = ["BAHARU", "SRS", "SDD", "TPA", "PEMBANGUNAN", "SIT", "UAT"]
-    active_df = filtered[filtered["Status Clean"].isin(active_status)].copy()
+    bahagian_status = filtered.copy()
 
-    bahagian_aktif_summary = active_df["Bahagian"].value_counts().reset_index()
-    bahagian_aktif_summary.columns = ["Bahagian", "Jumlah Aktif"]
+   bahagian_status = bahagian_status[
+    bahagian_status["Status Clean"] != "GUGUR"
+].copy()
 
-    fig_bahagian_aktif = px.bar(
-        bahagian_aktif_summary,
-        x="Jumlah Aktif",
-        y="Bahagian",
-        orientation="h",
-        text="Jumlah Aktif",
+bahagian_status["Ringkasan Status"] = bahagian_status["Status Clean"].apply(
+    lambda x: "Selesai" if x == "SELESAI" else "Belum Selesai"
+)
+
+    bahagian_summary = (
+        bahagian_status
+        .groupby(["Bahagian", "Ringkasan Status"])
+        .size()
+        .reset_index(name="Jumlah")
     )
-    fig_bahagian_aktif.update_layout(
+
+    bahagian_pivot = (
+        bahagian_summary
+        .pivot(index="Bahagian", columns="Ringkasan Status", values="Jumlah")
+        .fillna(0)
+        .reset_index()
+    )
+
+    if "Belum Selesai" not in bahagian_pivot.columns:
+        bahagian_pivot["Belum Selesai"] = 0
+
+    if "Selesai" not in bahagian_pivot.columns:
+        bahagian_pivot["Selesai"] = 0
+
+    bahagian_pivot["Total"] = (
+        bahagian_pivot["Belum Selesai"] + bahagian_pivot["Selesai"]
+    )
+
+    bahagian_pivot = bahagian_pivot.sort_values("Total", ascending=True)
+
+    fig_bahagian_status = go.Figure()
+
+    fig_bahagian_status.add_trace(
+        go.Bar(
+            y=bahagian_pivot["Bahagian"],
+            x=bahagian_pivot["Belum Selesai"],
+            name="Belum Selesai",
+            orientation="h",
+            marker=dict(color="#A7C7E7"),  # pastel blue
+            text=bahagian_pivot["Belum Selesai"],
+            textposition="inside",
+        )
+    )
+
+    fig_bahagian_status.add_trace(
+        go.Bar(
+            y=bahagian_pivot["Bahagian"],
+            x=bahagian_pivot["Selesai"],
+            name="Selesai",
+            orientation="h",
+            marker=dict(color="#B7E4C7"),  # pastel green
+            text=bahagian_pivot["Selesai"],
+            textposition="inside",
+        )
+    )
+
+    fig_bahagian_status.update_layout(
+        barmode="stack",
         height=430,
         margin=dict(l=10, r=10, t=30, b=10),
-        yaxis={"categoryorder": "total ascending"},
-        xaxis_title="Jumlah CR Aktif",
+        xaxis_title="Jumlah CR",
         yaxis_title="Bahagian",
+        legend_title_text="Status",
     )
-    st.plotly_chart(fig_bahagian_aktif, use_container_width=True)
+
+    st.plotly_chart(fig_bahagian_status, use_container_width=True)
     st.markdown('</div>', unsafe_allow_html=True)
 
 
