@@ -253,7 +253,12 @@ with left2:
 with right2:
     st.markdown('<div class="section-card">', unsafe_allow_html=True)
     st.subheader("Aging Bucket - Belum Selesai")
-    aging_df = filtered[filtered["Kumpulan Status"] == "Belum Selesai"].copy()
+    
+    aging_df = filtered[
+    (filtered["Kumpulan Status"] == "Belum Selesai")
+    & (filtered["Status"].astype(str).str.upper().str.strip() != "DITANGGUHKAN")
+].copy()
+    
     bucket_order = ["0-30 hari", "31-60 hari", "61-90 hari", "91-180 hari", "181-365 hari", ">365 hari", "Tiada tarikh"]
     aging_summary = aging_df["Aging Bucket"].value_counts().reindex(bucket_order).dropna().reset_index()
     aging_summary.columns = ["Aging Bucket", "Jumlah"]
