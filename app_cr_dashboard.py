@@ -193,7 +193,7 @@ metrics = [
     ("Jumlah CR", total_cr),
     ("Selesai", selesai),
     ("Belum Selesai", aktif),
-    ("Completion Rate", f"{completion_rate:.1f}%"),
+    ("Peratus Selesai", f"{completion_rate:.1f}%"),
 ]
 
 for col, (label, value) in zip([c1, c2, c3, c4, c5], metrics):
