@@ -267,7 +267,17 @@ with right2:
     & (filtered["Status"].astype(str).str.upper().str.strip() != "DITANGGUHKAN")
 ].copy()
     
-    bucket_order = ["0-30 hari", "31-60 hari", "61-90 hari", "91-180 hari", "181-365 hari", ">365 hari", "Tiada tarikh"]
+    bucket_order = [
+    "0-14 hari",
+    "15-30 hari",
+    "31-60 hari",
+    "61-90 hari",
+    "91-120 hari",
+    "121-180 hari",
+    "181-365 hari",
+    ">365 hari",
+    "Tiada tarikh",
+]
     aging_summary = aging_df["Aging Bucket"].value_counts().reindex(bucket_order).dropna().reset_index()
     aging_summary.columns = ["Aging Bucket", "Jumlah"]
     fig_aging = px.bar(aging_summary, x="Aging Bucket", y="Jumlah", text="Jumlah")
