@@ -188,8 +188,8 @@ c1, c2, c3, c4, c5 = st.columns(5)
 metrics = [
     ("Jumlah CR", total_cr),
     ("Selesai", selesai),
-    ("Belum Selesai", belum),
-    ("Gugur", gugur),
+    ("Aktif", aktif),
+    ("Ditangguhkan", tangguh),
     ("Completion Rate", f"{completion_rate:.1f}%"),
 ]
 
