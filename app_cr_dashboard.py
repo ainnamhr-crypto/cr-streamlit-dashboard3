@@ -285,12 +285,29 @@ left2, right2 = st.columns([1, 1])
 
 with left2:
     st.markdown('<div class="section-card">', unsafe_allow_html=True)
-    st.subheader("Jumlah CR Mengikut Bahagian")
-    bahagian_summary = filtered["Bahagian"].value_counts().reset_index()
-    bahagian_summary.columns = ["Bahagian", "Jumlah"]
-    fig_bahagian = px.bar(bahagian_summary, x="Jumlah", y="Bahagian", orientation="h", text="Jumlah")
-    fig_bahagian.update_layout(height=430, margin=dict(l=10, r=10, t=30, b=10), yaxis={"categoryorder": "total ascending"})
-    st.plotly_chart(fig_bahagian, use_container_width=True)
+    st.subheader("CR Aktif Mengikut Bahagian")
+
+    active_status = ["BAHARU", "SRS", "SDD", "TPA", "PEMBANGUNAN", "SIT", "UAT"]
+    active_df = filtered[filtered["Status Clean"].isin(active_status)].copy()
+
+    bahagian_aktif_summary = active_df["Bahagian"].value_counts().reset_index()
+    bahagian_aktif_summary.columns = ["Bahagian", "Jumlah Aktif"]
+
+    fig_bahagian_aktif = px.bar(
+        bahagian_aktif_summary,
+        x="Jumlah Aktif",
+        y="Bahagian",
+        orientation="h",
+        text="Jumlah Aktif",
+    )
+    fig_bahagian_aktif.update_layout(
+        height=430,
+        margin=dict(l=10, r=10, t=30, b=10),
+        yaxis={"categoryorder": "total ascending"},
+        xaxis_title="Jumlah CR Aktif",
+        yaxis_title="Bahagian",
+    )
+    st.plotly_chart(fig_bahagian_aktif, use_container_width=True)
     st.markdown('</div>', unsafe_allow_html=True)
 
 with right2:
