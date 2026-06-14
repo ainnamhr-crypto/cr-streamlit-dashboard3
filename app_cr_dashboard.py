@@ -530,6 +530,18 @@ aging_summary = (
 
 aging_summary.columns = ["Tempoh CR Aktif", "Jumlah"]
 
+tempoh_colors = [
+    "#16A34A",  # 0-14 hari
+    "#22C55E",  # 15-30 hari
+    "#84CC16",  # 31-60 hari
+    "#EAB308",  # 61-90 hari
+    "#F59E0B",  # 91-120 hari
+    "#F97316",  # 121-180 hari
+    "#EF4444",  # 181-365 hari
+    "#B91C1C",  # >365 hari
+    "#64748B",  # Tiada tarikh
+]
+
 fig_aging = px.bar(
     aging_summary,
     x="Tempoh CR Aktif",
