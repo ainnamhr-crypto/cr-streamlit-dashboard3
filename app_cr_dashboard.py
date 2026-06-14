@@ -244,10 +244,10 @@ st.write("")
 
 
 # =========================
-# STATUS CR MENGIKUT BAHAGIAN
+# CR MENGIKUT BAHAGIAN
 # =========================
 st.markdown('<div class="section-card">', unsafe_allow_html=True)
-st.subheader("Selesai vs Aktif Mengikut Bahagian")
+st.subheader("CR Mengikut Bahagian")
 
 bahagian_status = filtered.copy()
 
