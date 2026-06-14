@@ -523,45 +523,37 @@ if selected_bucket != "Pilih bucket...":
 
     display_cols = [
         col for col in [
-            "Bil", "Bahagian", "Tarikh Permohonan", "CCB", "No. CCB",
-            "Status", "Tajuk CR", "Hari Berlalu", "Aging Bucket", "Nota"
-        ]
-        if col in aging_table.columns
-    ]
-
-   with st.expander(f"Senarai CR Aging Bucket: {selected_bucket}", expanded=True):
-    st.caption(f"Jumlah CR dalam bucket ini: {len(aging_table)}")
-
-    summary_cols = [
-        col for col in [
             "Bil", "No. CCB", "Bahagian", "Status",
             "Tarikh Permohonan", "Hari Berlalu", "Aging Bucket"
         ]
         if col in aging_table.columns
     ]
 
-    st.dataframe(
-        aging_table[summary_cols],
-        use_container_width=True,
-        hide_index=True,
-    )
+    with st.expander(f"Senarai CR Aging Bucket: {selected_bucket}", expanded=True):
+        st.caption(f"Jumlah CR dalam bucket ini: {len(aging_table)}")
 
-    st.markdown("#### Detail CR")
+        st.dataframe(
+            aging_table[display_cols],
+            use_container_width=True,
+            hide_index=True,
+        )
 
-    for _, row in aging_table.iterrows():
-        no_ccb = row.get("No. CCB", "-")
-        status = row.get("Status", "-")
-        bahagian = row.get("Bahagian", "-")
-        tarikh = row.get("Tarikh Permohonan", "-")
-        hari = row.get("Hari Berlalu", "-")
-        tajuk = row.get("Tajuk CR", "-")
-        nota = row.get("Nota", "-")
+        st.markdown("#### Detail CR")
 
-        with st.expander(f"{no_ccb} | {status} | {bahagian}", expanded=False):
-            st.markdown(f"**Tajuk CR:** {tajuk}")
-            st.markdown(f"**Tarikh Permohonan:** {tarikh}")
-            st.markdown(f"**Hari Berlalu:** {hari}")
-            st.markdown(f"**Nota:** {nota}")
+        for _, row in aging_table.iterrows():
+            no_ccb = row.get("No. CCB", "-")
+            status = row.get("Status", "-")
+            bahagian = row.get("Bahagian", "-")
+            tarikh = row.get("Tarikh Permohonan", "-")
+            hari = row.get("Hari Berlalu", "-")
+            tajuk = row.get("Tajuk CR", "-")
+            nota = row.get("Nota", "-")
+
+            with st.expander(f"{no_ccb} | {status} | {bahagian}", expanded=False):
+                st.markdown(f"**Tajuk CR:** {tajuk}")
+                st.markdown(f"**Tarikh Permohonan:** {tarikh}")
+                st.markdown(f"**Hari Berlalu:** {hari}")
+                st.markdown(f"**Nota:** {nota}")
             
 st.markdown('</div>', unsafe_allow_html=True)
 
