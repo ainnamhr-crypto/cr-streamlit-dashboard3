@@ -251,14 +251,19 @@ st.subheader("CR Mengikut Bahagian")
 
 bahagian_status = filtered.copy()
 
-# Exclude GUGUR dan DITANGGUHKAN daripada chart ini
-bahagian_status = bahagian_status[
-    ~bahagian_status["Status Clean"].isin(["GUGUR", "DITANGGUHKAN"])
-].copy()
+# Group status kepada Selesai / Belum Selesai / Ditangguhkan / Gugur
+def ringkasan_status_bahagian(status):
+    if status == "SELESAI":
+        return "Selesai"
+    elif status == "DITANGGUHKAN":
+        return "Ditangguhkan"
+    elif status == "GUGUR":
+        return "Gugur"
+    else:
+        return "Belum Selesai"
 
-# Group status kepada Selesai / Belum Selesai
 bahagian_status["Ringkasan Status"] = bahagian_status["Status Clean"].apply(
-    lambda x: "Selesai" if x == "SELESAI" else "Belum Selesai"
+    ringkasan_status_bahagian
 )
 
 bahagian_summary = (
@@ -275,14 +280,15 @@ bahagian_pivot = (
     .reset_index()
 )
 
-if "Belum Selesai" not in bahagian_pivot.columns:
-    bahagian_pivot["Belum Selesai"] = 0
-
-if "Selesai" not in bahagian_pivot.columns:
-    bahagian_pivot["Selesai"] = 0
+for col in ["Belum Selesai", "Selesai", "Ditangguhkan", "Gugur"]:
+    if col not in bahagian_pivot.columns:
+        bahagian_pivot[col] = 0
 
 bahagian_pivot["Total"] = (
-    bahagian_pivot["Belum Selesai"] + bahagian_pivot["Selesai"]
+    bahagian_pivot["Belum Selesai"]
+    + bahagian_pivot["Selesai"]
+    + bahagian_pivot["Ditangguhkan"]
+    + bahagian_pivot["Gugur"]
 )
 
 bahagian_pivot = bahagian_pivot.sort_values("Total", ascending=True)
@@ -295,7 +301,7 @@ fig_bahagian_status.add_trace(
         x=bahagian_pivot["Belum Selesai"],
         name="Belum Selesai",
         orientation="h",
-        marker=dict(color="#A7C7E7"),
+        marker=dict(color="#A7C7E7"),  # pastel blue
         text=bahagian_pivot["Belum Selesai"],
         textposition="inside",
     )
@@ -307,8 +313,32 @@ fig_bahagian_status.add_trace(
         x=bahagian_pivot["Selesai"],
         name="Selesai",
         orientation="h",
-        marker=dict(color="#B7E4C7"),
+        marker=dict(color="#B7E4C7"),  # pastel green
         text=bahagian_pivot["Selesai"],
+        textposition="inside",
+    )
+)
+
+fig_bahagian_status.add_trace(
+    go.Bar(
+        y=bahagian_pivot["Bahagian"],
+        x=bahagian_pivot["Ditangguhkan"],
+        name="Ditangguhkan",
+        orientation="h",
+        marker=dict(color="#FFF1A8"),  # pastel yellow
+        text=bahagian_pivot["Ditangguhkan"],
+        textposition="inside",
+    )
+)
+
+fig_bahagian_status.add_trace(
+    go.Bar(
+        y=bahagian_pivot["Bahagian"],
+        x=bahagian_pivot["Gugur"],
+        name="Gugur",
+        orientation="h",
+        marker=dict(color="#FFB7B2"),  # pastel red
+        text=bahagian_pivot["Gugur"],
         textposition="inside",
     )
 )
