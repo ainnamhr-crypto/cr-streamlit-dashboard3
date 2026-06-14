@@ -70,6 +70,32 @@ st.markdown("""
     box-shadow: 0 3px 12px rgba(18, 38, 63, 0.05);
     margin-bottom: 16px;
 }
+
+/* Hide Streamlit toolbar/header for presentation */
+[data-testid="stToolbar"] {
+    display: none;
+}
+
+[data-testid="stDecoration"] {
+    display: none;
+}
+
+[data-testid="stStatusWidget"] {
+    display: none;
+}
+
+#MainMenu {
+    visibility: hidden;
+}
+
+footer {
+    visibility: hidden;
+}
+
+header {
+    visibility: hidden;
+}
+
 </style>
 """, unsafe_allow_html=True)
 
