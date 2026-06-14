@@ -439,7 +439,7 @@ st.markdown('</div>', unsafe_allow_html=True)
 # PRIORITY KPI
 # =========================
 st.markdown('<div class="section-card">', unsafe_allow_html=True)
-st.subheader("Aging Bucket - CR Aktif")
+st.subheader("Tempoh CR Aktif")
 
 active_status = ["BAHARU", "SRS", "SDD", "TPA", "PEMBANGUNAN", "SIT", "UAT"]
 active_df = filtered[filtered["Status Clean"].isin(active_status)].copy()
@@ -503,14 +503,14 @@ aging_summary = (
     .reset_index()
 )
 
-aging_summary.columns = ["Aging Bucket", "Jumlah"]
+aging_summary.columns = ["Tempoh CR Aktif", "Jumlah"]
 
 fig_aging = px.bar(
     aging_summary,
-    x="Aging Bucket",
+    x="Tempoh CR Aktif",
     y="Jumlah",
     text="Jumlah",
-    color="Aging Bucket",
+    color="Tempoh CR Aktif",
     color_discrete_sequence=[
         "#B7E4C7",
         "#D8F3DC",
@@ -527,7 +527,7 @@ fig_aging = px.bar(
 fig_aging.update_layout(
     height=430,
     margin=dict(l=10, r=10, t=30, b=10),
-    xaxis_title="Aging Bucket",
+    xaxis_title="Tempoh CR Aktif",
     yaxis_title="Jumlah CR",
     showlegend=False,
 )
@@ -539,12 +539,12 @@ st.plotly_chart(
 )
 
 selected_bucket = st.selectbox(
-    "Pilih aging bucket untuk lihat senarai CR",
-    ["Pilih bucket..."] + bucket_order,
+    "Pilih tempoh untuk lihat senarai CR",
+    ["Pilih tempoh..."] + bucket_order,
     key="selected_aging_bucket",
 )
 
-if selected_bucket != "Pilih bucket...":
+if selected_bucket != "Pilih tempoh...":
     aging_table = aging_df[
         aging_df["Aging Bucket"] == selected_bucket
     ].copy()
@@ -559,7 +559,7 @@ if selected_bucket != "Pilih bucket...":
         if col in aging_table.columns
     ]
 
-    with st.expander(f"Senarai CR Aging Bucket: {selected_bucket}", expanded=True):
+    with st.expander(f"Senarai CR Mengikut Tempoh Aktif: {selected_bucket}", expanded=True):
         st.caption(f"Jumlah CR dalam bucket ini: {len(aging_table)}")
 
         st.dataframe(
