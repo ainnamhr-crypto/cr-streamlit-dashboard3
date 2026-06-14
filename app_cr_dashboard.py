@@ -198,7 +198,7 @@ metrics = [
     ("Belum Selesai", belum),
     ("Ditangguhkan", tangguh),
     ("Gugur", gugur),
-    ("Completion Rate", f"{completion_rate:.1f}%"),
+    ("Peratus Selesai", f"{completion_rate:.1f}%"),
 ]
 
 metrics_row1 = [
@@ -210,7 +210,7 @@ metrics_row1 = [
 metrics_row2 = [
     ("Ditangguhkan", tangguh),
     ("Gugur", gugur),
-    ("Completion Rate", f"{completion_rate:.1f}%"),
+    ("Peratus Selesai", f"{completion_rate:.1f}%"),
 ]
 
 cols1 = st.columns(3)
