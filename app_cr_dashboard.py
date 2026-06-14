@@ -328,6 +328,42 @@ st.plotly_chart(
     key="chart_bahagian_status_full_row"
 )
 
+st.plotly_chart(
+    fig_aging,
+    use_container_width=True,
+    key="chart_aging_bucket_full_row"
+)
+
+selected_bucket = st.selectbox(
+    "Pilih aging bucket untuk lihat senarai CR",
+    ["Pilih bucket..."] + bucket_order,
+    key="selected_aging_bucket",
+)
+
+if selected_bucket != "Pilih bucket...":
+    aging_table = aging_df[
+        aging_df["Aging Bucket"] == selected_bucket
+    ].copy()
+
+    aging_table = aging_table.sort_values("Hari Berlalu", ascending=False)
+
+    display_cols = [
+        col for col in [
+            "Bil", "Bahagian", "Tarikh Permohonan", "CCB", "No. CCB",
+            "Status", "Tajuk CR", "Hari Berlalu", "Aging Bucket", "Nota"
+        ]
+        if col in aging_table.columns
+    ]
+
+    with st.expander(f"Senarai CR Aging Bucket: {selected_bucket}", expanded=True):
+        st.dataframe(
+            aging_table[display_cols],
+            use_container_width=True,
+            hide_index=True,
+        )
+
+st.markdown('</div>', unsafe_allow_html=True)
+
 st.markdown('</div>', unsafe_allow_html=True)
 
 
@@ -508,22 +544,32 @@ st.plotly_chart(
 )
 
 selected_bucket = st.selectbox(
-    "Klik/pilih bucket untuk lihat senarai CR",
-    ["Semua"] + bucket_order,
+    "Pilih aging bucket untuk lihat senarai CR",
+    ["Pilih bucket..."] + bucket_order,
     key="selected_aging_bucket",
 )
 
-aging_table = aging_df.copy()
+if selected_bucket != "Pilih bucket...":
+    aging_table = aging_df[
+        aging_df["Aging Bucket"] == selected_bucket
+    ].copy()
 
-if selected_bucket != "Semua":
-    aging_table = aging_table[aging_table["Aging Bucket"] == selected_bucket]
+    aging_table = aging_table.sort_values("Hari Berlalu", ascending=False)
 
-st.dataframe(
-    aging_table,
-    use_container_width=True,
-    hide_index=True,
-)
+    display_cols = [
+        col for col in [
+            "Bil", "Bahagian", "Tarikh Permohonan", "CCB", "No. CCB",
+            "Status", "Tajuk CR", "Hari Berlalu", "Aging Bucket", "Nota"
+        ]
+        if col in aging_table.columns
+    ]
 
+    with st.expander(f"Senarai CR Aging Bucket: {selected_bucket}", expanded=True):
+        st.dataframe(
+            aging_table[display_cols],
+            use_container_width=True,
+            hide_index=True,
+        )
 st.markdown('</div>', unsafe_allow_html=True)
 
 
