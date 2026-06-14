@@ -172,7 +172,7 @@ def load_data(uploaded_file=None):
 # =========================
 # HEADER
 # =========================
-st.markdown('<div class="main-title">Dashboard Change Request (CR) mySIKAP</div>', unsafe_allow_html=True)
+st.markdown('<div class="main-title">Dashboard Pemantauan Status Change Request (CR) Sistem mySIKAP</div>', unsafe_allow_html=True)
 #st.markdown('<div class="sub-title">Ringkasan jumlah CR, status siap/belum siap, aging, dan timeline setiap CR.</div>', unsafe_allow_html=True)#
 
 # =========================
@@ -444,6 +444,13 @@ fig_status.update_layout(
     height=480,
     margin=dict(l=10, r=10, t=30, b=10),
     legend_title_text="Status",
+    legend=dict(
+        orientation="h",
+        yanchor="bottom",
+        y=-0.15,
+        xanchor="center",
+        x=0.5
+    )
 )
 
 st.plotly_chart(fig_status, use_container_width=True)
