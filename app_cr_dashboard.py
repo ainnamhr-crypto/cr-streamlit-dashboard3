@@ -180,12 +180,14 @@ if search_text:
 # KPI METRICS
 # =========================
 total_cr = len(filtered)
-selesai = (filtered["Kumpulan Status"] == "Selesai").sum()
-tangguh = (filtered["Status Clean"] == "DITANGGUHKAN").sum()
-gugur = (filtered["Kumpulan Status"] == "Gugur").sum()
 
-active_status = ["BAHARU", "SRS", "SDD", "TPA", "PEMBANGUNAN", "SIT", "UAT"]
-aktif = filtered["Status Clean"].isin(active_status).sum()
+selesai = (filtered["Status Clean"] == "SELESAI").sum()
+tangguh = (filtered["Status Clean"] == "DITANGGUHKAN").sum()
+gugur = (filtered["Status Clean"] == "GUGUR").sum()
+
+belum = (
+    ~filtered["Status Clean"].isin(["SELESAI", "DITANGGUHKAN", "GUGUR"])
+).sum()
 
 completion_rate = (selesai / total_cr * 100) if total_cr else 0
 
@@ -193,11 +195,39 @@ c1, c2, c3, c4, c5 = st.columns(5)
 metrics = [
     ("Jumlah CR", total_cr),
     ("Selesai", selesai),
-    ("Belum Selesai", aktif),
-    ("Peratus Selesai", f"{completion_rate:.1f}%"),
+    ("Belum Selesai", belum),
+    ("Ditangguhkan", tangguh),
+    ("Gugur", gugur),
+    ("Completion Rate", f"{completion_rate:.1f}%"),
 ]
 
-for col, (label, value) in zip([c1, c2, c3, c4, c5], metrics):
+metrics_row1 = [
+    ("Jumlah CR", total_cr),
+    ("Selesai", selesai),
+    ("Belum Selesai", belum),
+]
+
+metrics_row2 = [
+    ("Ditangguhkan", tangguh),
+    ("Gugur", gugur),
+    ("Completion Rate", f"{completion_rate:.1f}%"),
+]
+
+cols1 = st.columns(3)
+for col, (label, value) in zip(cols1, metrics_row1):
+    with col:
+        st.markdown(
+            f"""
+            <div class="metric-card">
+                <div class="metric-label">{label}</div>
+                <div class="metric-value">{value}</div>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+
+cols2 = st.columns(3)
+for col, (label, value) in zip(cols2, metrics_row2):
     with col:
         st.markdown(
             f"""
