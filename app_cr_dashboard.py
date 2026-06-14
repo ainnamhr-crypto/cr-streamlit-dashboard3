@@ -530,11 +530,38 @@ if selected_bucket != "Pilih bucket...":
     ]
 
     with st.expander(f"Senarai CR Aging Bucket: {selected_bucket}", expanded=True):
-        st.dataframe(
-            aging_table[display_cols],
-            use_container_width=True,
-            hide_index=True,
-        )
+    st.caption(f"Jumlah CR dalam bucket ini: {len(aging_table)}")
+
+    summary_cols = [
+        col for col in [
+            "Bil", "No. CCB", "Bahagian", "Status",
+            "Tarikh Permohonan", "Hari Berlalu", "Aging Bucket"
+        ]
+        if col in aging_table.columns
+    ]
+
+    st.dataframe(
+        aging_table[summary_cols],
+        use_container_width=True,
+        hide_index=True,
+    )
+
+    st.markdown("#### Detail CR")
+
+    for _, row in aging_table.iterrows():
+        no_ccb = row.get("No. CCB", "-")
+        status = row.get("Status", "-")
+        bahagian = row.get("Bahagian", "-")
+        tarikh = row.get("Tarikh Permohonan", "-")
+        hari = row.get("Hari Berlalu", "-")
+        tajuk = row.get("Tajuk CR", "-")
+        nota = row.get("Nota", "-")
+
+        with st.expander(f"{no_ccb} | {status} | {bahagian}", expanded=False):
+            st.markdown(f"**Tajuk CR:** {tajuk}")
+            st.markdown(f"**Tarikh Permohonan:** {tarikh}")
+            st.markdown(f"**Hari Berlalu:** {hari}")
+            st.markdown(f"**Nota:** {nota}")
 st.markdown('</div>', unsafe_allow_html=True)
 
 
