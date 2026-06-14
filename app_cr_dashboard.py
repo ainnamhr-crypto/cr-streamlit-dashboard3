@@ -51,7 +51,15 @@ st.markdown("""
     border-radius: 18px;
     padding: 18px 20px;
     box-shadow: 0 3px 12px rgba(18, 38, 63, 0.06);
+    border-top: 6px solid var(--accent-color);
 }
+
+.metric-card.total { --accent-color: #334155; }
+.metric-card.selesai { --accent-color: #16A34A; }
+.metric-card.belum { --accent-color: #2563EB; }
+.metric-card.tangguh { --accent-color: #F59E0B; }
+.metric-card.gugur { --accent-color: #DC2626; }
+.metric-card.rate { --accent-color: #7C3AED; }
 .metric-label {font-size: 13px; color: #667085; font-weight: 600;}
 .metric-value {font-size: 32px; font-weight: 800; margin-top: 4px;}
 .section-card {
@@ -226,23 +234,23 @@ metrics = [
 ]
 
 metrics_row1 = [
-    ("Jumlah CR", total_cr),
-    ("Selesai", selesai),
-    ("Belum Selesai", belum),
+    ("Jumlah CR", total_cr, "total"),
+    ("Selesai", selesai, "selesai"),
+    ("Belum Selesai", belum, "belum"),
 ]
 
 metrics_row2 = [
-    ("Ditangguhkan", tangguh),
-    ("Gugur", gugur),
-    ("Peratus Selesai", f"{completion_rate:.1f}%"),
+    ("Ditangguhkan", tangguh, "tangguh"),
+    ("Gugur", gugur, "gugur"),
+    ("Peratus Selesai", f"{completion_rate:.1f}%", "rate"),
 ]
 
 cols1 = st.columns(3)
-for col, (label, value) in zip(cols1, metrics_row1):
+for col, (label, value, card_class) in zip(cols1, metrics_row1):
     with col:
         st.markdown(
             f"""
-            <div class="metric-card">
+            <div class="metric-card {card_class}">
                 <div class="metric-label">{label}</div>
                 <div class="metric-value">{value}</div>
             </div>
@@ -251,11 +259,11 @@ for col, (label, value) in zip(cols1, metrics_row1):
         )
 
 cols2 = st.columns(3)
-for col, (label, value) in zip(cols2, metrics_row2):
+for col, (label, value, card_class) in zip(cols2, metrics_row2):
     with col:
         st.markdown(
             f"""
-            <div class="metric-card">
+            <div class="metric-card {card_class}">
                 <div class="metric-label">{label}</div>
                 <div class="metric-value">{value}</div>
             </div>
