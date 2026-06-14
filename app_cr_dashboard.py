@@ -529,7 +529,7 @@ if selected_bucket != "Pilih bucket...":
         if col in aging_table.columns
     ]
 
-    with st.expander(f"Senarai CR Aging Bucket: {selected_bucket}", expanded=True):
+   with st.expander(f"Senarai CR Aging Bucket: {selected_bucket}", expanded=True):
     st.caption(f"Jumlah CR dalam bucket ini: {len(aging_table)}")
 
     summary_cols = [
@@ -562,6 +562,7 @@ if selected_bucket != "Pilih bucket...":
             st.markdown(f"**Tarikh Permohonan:** {tarikh}")
             st.markdown(f"**Hari Berlalu:** {hari}")
             st.markdown(f"**Nota:** {nota}")
+            
 st.markdown('</div>', unsafe_allow_html=True)
 
 
