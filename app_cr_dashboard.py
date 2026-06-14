@@ -488,15 +488,14 @@ aktif_180 = (active_df["Hari Berlalu"] > 180).sum()
 aktif_365 = (active_df["Hari Berlalu"] > 365).sum()
 tiada_tarikh = active_df["Tarikh Mula"].isna().sum()
 
-p1, p2, p3 = st.columns(3)
+left_spacer, p1, p2, right_spacer = st.columns([1, 2, 2, 1])
 
 priority_metrics = [
     ("CR Aktif >180 Hari", aktif_180),
     ("CR Aktif >365 Hari", aktif_365),
-    ("CR Aktif Tiada Tarikh", tiada_tarikh),
 ]
 
-for col, (label, value) in zip([p1, p2, p3], priority_metrics):
+for col, (label, value) in zip([p1, p2], priority_metrics):
     with col:
         st.markdown(
             f"""
@@ -508,8 +507,6 @@ for col, (label, value) in zip([p1, p2, p3], priority_metrics):
             unsafe_allow_html=True,
         )
 
-if tiada_tarikh > 0:
-    st.warning(f"Terdapat {tiada_tarikh} CR aktif tanpa Tarikh Permohonan. Sila kemaskini data untuk aging yang lebih tepat.")
 
 st.write("")
 
