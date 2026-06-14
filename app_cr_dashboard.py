@@ -702,15 +702,6 @@ if selected_detail_bahagian != "Pilih Bahagian...":
         mime="text/csv",
     )
 
-csv_export = detail_df.to_csv(index=False).encode("utf-8-sig")
-
-st.download_button(
-    "⬇️ Download senarai CR dipaparkan",
-    data=csv_export,
-    file_name="senarai_cr_keseluruhan.csv",
-    mime="text/csv",
-)
-
 st.markdown('</div>', unsafe_allow_html=True)
 
 
