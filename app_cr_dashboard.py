@@ -385,24 +385,22 @@ fig_status.update_layout(
 st.plotly_chart(fig_status, use_container_width=True)
 selected_status = st.selectbox(
     "Pilih status untuk lihat senarai CR",
-    ["Semua"] + status_summary["Status"].tolist(),
+    ["Pilih status..."] + status_summary["Status"].tolist(),
     key="selected_status_detail"
 )
 
-status_detail = filtered.copy()
+if selected_status != "Pilih status...":
+    status_detail = filtered[
+        filtered["Status Clean"] == selected_status
+    ].copy()
 
-if selected_status != "Semua":
-    status_detail = status_detail[
-        status_detail["Status Clean"] == selected_status
-    ]
-
-st.dataframe(
-    status_detail[
-        ["Bil", "Bahagian", "Tarikh Permohonan", "CCB", "No. CCB", "Status", "Tajuk CR", "Nota"]
-    ],
-    use_container_width=True,
-    hide_index=True
-)
+    st.dataframe(
+        status_detail[
+            ["Bil", "Bahagian", "Tarikh Permohonan", "CCB", "No. CCB", "Status", "Tajuk CR", "Nota"]
+        ],
+        use_container_width=True,
+        hide_index=True
+    )
 
 st.markdown('</div>', unsafe_allow_html=True)
 
