@@ -8,7 +8,7 @@ import plotly.graph_objects as go
 # CONFIG PAGE
 # =========================
 st.set_page_config(
-    page_title="Dashboard CR mySIKAP",
+    page_title="Dashboard Pemantauan Status Change Request (CR) Sistem mySIKAP",
     page_icon="📊",
     layout="wide"
 )
