@@ -639,6 +639,7 @@ if selected_bucket != "Pilih tempoh...":
             no_ccb = row.get("No. CCB", "-")
             status = row.get("Status", "-")
             bahagian = row.get("Bahagian", "-")
+            ccb = row.get("CCB", "-")
             tarikh = row.get("Tarikh Permohonan", "-")
             hari = row.get("Hari Berlalu", "-")
             tajuk = row.get("Tajuk CR", "-")
@@ -646,6 +647,7 @@ if selected_bucket != "Pilih tempoh...":
 
             with st.expander(f"{no_ccb} | {status} | {bahagian}", expanded=False):
                 st.markdown(f"**Tajuk CR:** {tajuk}")
+                st.markdown(f"**CCB:** {ccb}")
                 st.markdown(f"**Tarikh Permohonan:** {tarikh}")
                 st.markdown(f"**Hari Berlalu:** {hari}")
                 st.markdown(f"**Nota:** {nota}")
