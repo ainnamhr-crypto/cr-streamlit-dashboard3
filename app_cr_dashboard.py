@@ -629,27 +629,53 @@ if selected_bucket != "Pilih tempoh...":
             
 st.markdown('</div>', unsafe_allow_html=True)
 
-
-
 # =========================
-# DETAIL TABLE
+# SENARAI CR KESELURUHAN
 # =========================
 st.markdown('<div class="section-card">', unsafe_allow_html=True)
-st.subheader("Senarai Detail CR")
-st.dataframe(
-    filtered[[
+st.subheader("Senarai CR Keseluruhan")
+
+bahagian_options = ["Semua Bahagian"] + sorted(filtered["Bahagian"].dropna().unique().tolist())
+
+selected_detail_bahagian = st.selectbox(
+    "Pilih Bahagian untuk paparan senarai CR",
+    bahagian_options,
+    key="selected_detail_bahagian"
+)
+
+detail_df = filtered.copy()
+
+if selected_detail_bahagian != "Semua Bahagian":
+    detail_df = detail_df[
+        detail_df["Bahagian"] == selected_detail_bahagian
+    ].copy()
+
+st.caption(f"Jumlah CR dipaparkan: {len(detail_df)}")
+
+display_cols = [
+    col for col in [
         "Bil", "Bahagian", "Tarikh Permohonan", "CCB", "No. CCB", "Tajuk CR",
-        "Status", "Kumpulan Status", "Hari Berlalu", "Aging Bucket", "Nota", "On-Site", "Off-Site"
-    ]],
+        "Status", "Kumpulan Status", "Hari Berlalu", "Aging Bucket", "Nota",
+        "On-Site", "Off-Site"
+    ]
+    if col in detail_df.columns
+]
+
+st.dataframe(
+    detail_df[display_cols],
     use_container_width=True,
     hide_index=True,
 )
 
-csv_export = filtered.to_csv(index=False).encode("utf-8-sig")
+csv_export = detail_df.to_csv(index=False).encode("utf-8-sig")
+
 st.download_button(
-    "⬇️ Download data selepas filter",
+    "⬇️ Download senarai CR dipaparkan",
     data=csv_export,
-    file_name="cr_dashboard_filtered.csv",
+    file_name="senarai_cr_keseluruhan.csv",
     mime="text/csv",
 )
+
 st.markdown('</div>', unsafe_allow_html=True)
+
+
