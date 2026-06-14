@@ -303,7 +303,7 @@ fig_bahagian_status.add_trace(
         orientation="h",
         marker=dict(color="#A7C7E7"),  # pastel blue
         text=bahagian_pivot["Belum Selesai"],
-        textposition="inside",
+        textposition="auto",
     )
 )
 
@@ -315,7 +315,7 @@ fig_bahagian_status.add_trace(
         orientation="h",
         marker=dict(color="#B7E4C7"),  # pastel green
         text=bahagian_pivot["Selesai"],
-        textposition="inside",
+        textposition="auto",
     )
 )
 
@@ -327,7 +327,7 @@ fig_bahagian_status.add_trace(
         orientation="h",
         marker=dict(color="#FFF1A8"),  # pastel yellow
         text=bahagian_pivot["Ditangguhkan"],
-        textposition="inside",
+        textposition="auto",
     )
 )
 
@@ -339,7 +339,7 @@ fig_bahagian_status.add_trace(
         orientation="h",
         marker=dict(color="#FFB7B2"),  # pastel red
         text=bahagian_pivot["Gugur"],
-        textposition="inside",
+        textposition="auto",
     )
 )
 
@@ -402,7 +402,7 @@ fig_status = px.pie(
 )
 
 fig_status.update_traces(
-    textposition="inside",
+    textposition="auto",
     textinfo="label+value",
     pull=[0.02] * len(status_summary),
 )
