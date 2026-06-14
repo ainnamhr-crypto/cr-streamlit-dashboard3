@@ -658,7 +658,9 @@ st.markdown('</div>', unsafe_allow_html=True)
 st.markdown('<div class="section-card">', unsafe_allow_html=True)
 st.subheader("Senarai CR Keseluruhan")
 
-bahagian_options = ["Semua Bahagian"] + sorted(filtered["Bahagian"].dropna().unique().tolist())
+bahagian_options = ["Pilih Bahagian...", "Semua Bahagian"] + sorted(
+    filtered["Bahagian"].dropna().unique().tolist()
+)
 
 selected_detail_bahagian = st.selectbox(
     "Pilih Bahagian untuk paparan senarai CR",
@@ -666,29 +668,39 @@ selected_detail_bahagian = st.selectbox(
     key="selected_detail_bahagian"
 )
 
-detail_df = filtered.copy()
+if selected_detail_bahagian != "Pilih Bahagian...":
+    detail_df = filtered.copy()
 
-if selected_detail_bahagian != "Semua Bahagian":
-    detail_df = detail_df[
-        detail_df["Bahagian"] == selected_detail_bahagian
-    ].copy()
+    if selected_detail_bahagian != "Semua Bahagian":
+        detail_df = detail_df[
+            detail_df["Bahagian"] == selected_detail_bahagian
+        ].copy()
 
-st.caption(f"Jumlah CR dipaparkan: {len(detail_df)}")
+    st.caption(f"Jumlah CR dipaparkan: {len(detail_df)}")
 
-display_cols = [
-    col for col in [
-        "Bil", "Bahagian", "Tarikh Permohonan", "CCB", "No. CCB", "Tajuk CR",
-        "Status", "Kumpulan Status", "Hari Berlalu", "Aging Bucket", "Nota",
-        "On-Site", "Off-Site"
+    display_cols = [
+        col for col in [
+            "Bil", "Bahagian", "Tarikh Permohonan", "CCB", "No. CCB", "Tajuk CR",
+            "Status", "Kumpulan Status", "Hari Berlalu", "Aging Bucket", "Nota",
+            "On-Site", "Off-Site"
+        ]
+        if col in detail_df.columns
     ]
-    if col in detail_df.columns
-]
 
-st.dataframe(
-    detail_df[display_cols],
-    use_container_width=True,
-    hide_index=True,
-)
+    st.dataframe(
+        detail_df[display_cols],
+        use_container_width=True,
+        hide_index=True,
+    )
+
+    csv_export = detail_df.to_csv(index=False).encode("utf-8-sig")
+
+    st.download_button(
+        "⬇️ Download senarai CR dipaparkan",
+        data=csv_export,
+        file_name="senarai_cr_keseluruhan.csv",
+        mime="text/csv",
+    )
 
 csv_export = detail_df.to_csv(index=False).encode("utf-8-sig")
 
