@@ -186,7 +186,7 @@ tangguh = (filtered["Status Clean"] == "DITANGGUHKAN").sum()
 gugur = (filtered["Status Clean"] == "GUGUR").sum()
 
 belum = (
-    ~filtered["Status Clean"].isin(["SELESAI", "DITANGGUHKAN", "GUGUR"])
+     ~filtered["Status Clean"].isin(["SELESAI", "GUGUR"])
 ).sum()
 
 completion_rate = (selesai / total_cr * 100) if total_cr else 0
