@@ -5,6 +5,30 @@ import plotly.express as px
 import plotly.graph_objects as go
 
 # =========================
+# DASHBOARD COLORS
+# =========================
+COLOR_SELESAI = "#16A34A"
+COLOR_BELUM = "#2563EB"
+COLOR_TANGGUH = "#F59E0B"
+COLOR_GUGUR = "#DC2626"
+COLOR_GREY = "#64748B"
+
+STATUS_COLOR_MAP = {
+    "SELESAI": COLOR_SELESAI,
+    "BELUM SELESAI": COLOR_BELUM,
+    "DITANGGUHKAN": COLOR_TANGGUH,
+    "GUGUR": COLOR_GUGUR,
+    "BAHARU": "#0EA5E9",
+    "SRS": "#8B5CF6",
+    "SDD": "#6366F1",
+    "TPA": "#EC4899",
+    "PEMBANGUNAN": "#14B8A6",
+    "SIT": "#F97316",
+    "UAT": "#84CC16",
+    "TIADA STATUS": COLOR_GREY,
+}
+
+# =========================
 # CONFIG PAGE
 # =========================
 st.set_page_config(
@@ -301,7 +325,7 @@ fig_bahagian_status.add_trace(
         x=bahagian_pivot["Belum Selesai"],
         name="Belum Selesai",
         orientation="h",
-        marker=dict(color="#A7C7E7"),  # pastel blue
+        marker=dict(color=COLOR_BELUM),
         text=bahagian_pivot["Belum Selesai"],
         textposition="auto",
     )
@@ -313,7 +337,7 @@ fig_bahagian_status.add_trace(
         x=bahagian_pivot["Selesai"],
         name="Selesai",
         orientation="h",
-        marker=dict(color="#B7E4C7"),  # pastel green
+        marker=dict(color=COLOR_SELESAI),
         text=bahagian_pivot["Selesai"],
         textposition="auto",
     )
@@ -325,7 +349,7 @@ fig_bahagian_status.add_trace(
         x=bahagian_pivot["Ditangguhkan"],
         name="Ditangguhkan",
         orientation="h",
-        marker=dict(color="#FFF1A8"),  # pastel yellow
+        marker=dict(color=COLOR_TANGGUH),
         text=bahagian_pivot["Ditangguhkan"],
         textposition="auto",
     )
@@ -337,7 +361,7 @@ fig_bahagian_status.add_trace(
         x=bahagian_pivot["Gugur"],
         name="Gugur",
         orientation="h",
-        marker=dict(color="#FFB7B2"),  # pastel red
+        marker=dict(color=COLOR_GUGUR),
         text=bahagian_pivot["Gugur"],
         textposition="auto",
     )
@@ -398,7 +422,8 @@ fig_status = px.pie(
     names="Status",
     values="Jumlah",
     hole=0.45,
-    color_discrete_sequence=pastel_colors,
+    color="Status",
+    color_discrete_map=STATUS_COLOR_MAP,
 )
 
 fig_status.update_traces(
@@ -511,17 +536,7 @@ fig_aging = px.bar(
     y="Jumlah",
     text="Jumlah",
     color="Tempoh CR Aktif",
-    color_discrete_sequence=[
-        "#B7E4C7",
-        "#D8F3DC",
-        "#FFF1A8",
-        "#FFDAC1",
-        "#FFB7B2",
-        "#F6C6EA",
-        "#C7CEEA",
-        "#A7C7E7",
-        "#D9D9D9",
-    ],
+    color_discrete_sequence=tempoh_colors,
 )
 
 fig_aging.update_layout(
