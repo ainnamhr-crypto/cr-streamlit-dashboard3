@@ -187,6 +187,38 @@ div[data-baseweb="select"] > div:hover {
     }
 }
 
+/* Expander and detail text visibility */
+[data-testid="stExpander"] {
+    background-color: #FFFFFF !important;
+    color: #111827 !important;
+    border: 1px solid #E5E7EB !important;
+    border-radius: 12px !important;
+}
+
+[data-testid="stExpander"] * {
+    color: #111827 !important;
+}
+
+[data-testid="stExpander"] summary {
+    background-color: #F8FAFC !important;
+    color: #111827 !important;
+}
+
+[data-testid="stExpander"] p,
+[data-testid="stExpander"] span,
+[data-testid="stExpander"] div {
+    color: #111827 !important;
+}
+
+/* Dataframe/table text visibility */
+[data-testid="stDataFrame"] {
+    color: #111827 !important;
+}
+
+[data-testid="stDataFrame"] * {
+    color: #111827 !important;
+}
+
 </style>
 """, unsafe_allow_html=True)
 
@@ -493,8 +525,8 @@ fig_bahagian_status.add_trace(
 
 fig_bahagian_status.update_layout(
     barmode="stack",
-    height=560,
-    margin=dict(l=10, r=120, t=30, b=80),
+    height=650,
+    margin=dict(l=10, r=120, t=30, b=140),
     xaxis_title="Jumlah CR",
     yaxis_title="Bahagian",
     legend_title_text="Status",
@@ -502,11 +534,11 @@ fig_bahagian_status.update_layout(
     paper_bgcolor="white",
     font=dict(color="#111827"),
     legend=dict(
-        orientation="h",
-        yanchor="top",
-        y=-0.18,
-        xanchor="center",
-        x=0.5
+    orientation="h",
+    yanchor="top",
+    y=-0.25,
+    xanchor="center",
+    x=0.5
     ),
     xaxis=dict(
         range=[0, bahagian_pivot["Total"].max() + 10]
@@ -591,18 +623,18 @@ fig_status.update_traces(
 )
 
 fig_status.update_layout(
-     height=480,
-    margin=dict(l=10, r=10, t=30, b=10),
+    height=560,
+    margin=dict(l=10, r=10, t=30, b=120),
     legend_title_text="Status",
     plot_bgcolor="white",
     paper_bgcolor="white",
     font=dict(color="#111827"),
     legend=dict(
-        orientation="h",
-        yanchor="bottom",
-        y=-0.15,
-        xanchor="center",
-        x=0.5
+    orientation="h",
+    yanchor="top",
+    y=-0.2,
+    xanchor="center",
+    x=0.5
     )
 )
 
