@@ -81,7 +81,12 @@ st.markdown("""
 .metric-card.gugur { --accent-color: #DC2626; }
 .metric-card.rate { --accent-color: #7C3AED; }
 .metric-label {font-size: 13px; color: #667085; font-weight: 600;}
-.metric-value {font-size: 32px; font-weight: 800; margin-top: 4px;}
+.metric-value {
+    font-size: 32px;
+    font-weight: 800;
+    margin-top: 4px;
+    color: #111827 !important;
+}
 
 .section-card {
     background: #FFFFFF;
@@ -137,7 +142,7 @@ div[data-baseweb="select"] > div:hover {
     margin: 28px 0 22px 0;
 }
 
-# untuk view phone
+/* untuk view phone */
 @media (max-width: 768px) {
     .block-container {
         padding-top: 2rem;
@@ -149,32 +154,36 @@ div[data-baseweb="select"] > div:hover {
         font-size: 22px;
         line-height: 1.25;
         margin-bottom: 14px;
+        color: #1F2937 !important;
     }
 
     .metric-card {
         padding: 14px 16px;
         min-height: 110px;
         margin-bottom: 12px;
+        background: #FFFFFF !important;
     }
 
     .metric-label {
         font-size: 13px;
-        color: #475569;
+        color: #475569 !important;
     }
 
     .metric-value {
         font-size: 30px;
-        color: #111827;
+        color: #111827 !important;
     }
 
     .section-card {
         padding: 12px;
         border-radius: 14px;
+        background: #FFFFFF !important;
     }
 
     h2, h3 {
         font-size: 22px !important;
         line-height: 1.25 !important;
+        color: #1F2937 !important;
     }
 }
 
