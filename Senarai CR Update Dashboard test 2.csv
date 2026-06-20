@@ -5,7 +5,7 @@ Bil,Bahagian,Tarikh Permohonan,CCB,No. CCB,Tajuk CR,Status, Nota,On-Site,Off-Sit
 4,Pelesenan Kenderaan,5-Jun-24,CCB Bil 1/2024,CCB/2024/L/004,Penambahbaikan menu ICP,SELESAI,Selesai pada 28/3/2025,26,
 5,Pelesenan Kenderaan,11-Jul-24,CCB Bil 2/2024,CCB/2024/L/005,"Cetakan LKM Bentuk Baharu Bagi LPS, KIOS & ICP",SELESAI,Selesai pada 21/11/2024,,20
 6,Pelesenan Kenderaan,11-Jul-24,CCB Bil 2/2024,   ,Pengecualian Pemeriksaan Berkala Kenderaan Sekolah Memandu Untuk Tahun Pertama Dan Kedua,GUGUR,CR digugurkan kerana pihak PUSPAKOM telah menghantar data pemeriksaan awalan dengan betul. ,,
-7,Pelesenan Kenderaan,11-Jul-24,`,CCB/2024/L/007,Penambahbaikan Urus Niaga Tukar Hak Milik Selain Sukarela,GUGUR,"Jangkaan TPA pada 28/5/2026
+7,Pelesenan Kenderaan,11-Jul-24,`,CCB/2024/L/007,Penambahbaikan Urus Niaga Tukar Hak Milik Selain Sukarela,DITANGGUHKAN,"Jangkaan TPA pada 28/5/2026
 
 Akan di bawa ke revamp mengambil kira keperluan data migration revamp kerana terdapat pindaan pada table (alter table)",20,
 8,Pelesenan Kenderaan,11-Jul-24,CCB Bil 2/2024,CCB/2024/L/008,Pindaan Fi Sijil Pemilikan Kenderaan (VOC) Selaras Dengan Pewartaan Kerajaan Malaysia Bagi Kaedah-kaedah Kenderaan Motor (Pendaftaran Dan Pelesenan) (Pindaan Jadual Keempat) 2024,SELESAI,Selesai pada 2/7/2024,0,
@@ -79,13 +79,7 @@ Integrasi Car Medic dengan RHB dalam peringkat akhir selesai.
 Jangkaan SIT pada 02/07/2026
 Jangkaan UAT pada 08/07/2026.
 Jangkaan UAT 16/07/2026.",,21
-50,Pelesenan Kenderaan,19-Nov-25,CCB BIL 5/2025,CCB/2025/L/021,Pengintegrasian Sistem Pesanan Rekaan Plat Khas (JPJePLATE) Dengan Sistem mySIKAP Jabatan Pengangkutan Jalan (JPJ) Malaysia,UAT,"Bergantung kepada ketersediaan Handal Ceria
-
-Jangkaan TPA pada 28/5/2026
-
-UAT pada 19/05/2026
-RE-UAT pada 12/06/2026
-Jangkaan TPA pada 18/06/2026",,17
+50,Pelesenan Kenderaan,19-Nov-25,CCB BIL 5/2025,CCB/2025/L/021,Pengintegrasian Sistem Pesanan Rekaan Plat Khas (JPJePLATE) Dengan Sistem mySIKAP Jabatan Pengangkutan Jalan (JPJ) Malaysia,SELESAI,SELESAI PADA 26/6/2026,,17
 51,Pelesenan Kenderaan,19-Nov-25,CCB BIL 5/2025,CCB/2025/L/022,Penetapan Dasar Pelesenan Dan Pengawalaseliaan Kenderaan Rekreasi (RV),SELESAI,Selesai pada 30/1/2026,,44
 52,Pelesenan Kenderaan,6-Jan-26,CCB BIL 1/2026,CCB/2026/L/001,PENETAPAN KADAR FI PENGIRAAN LESEN KENDERAAN MOTOR (LKM) DAN TEMPOH PEMBAHARUAN LKM BAGI KENDERAAN PERKHIDMATAN e-HAILING,SELESAI,Selesai pada 6/2/2026,,64
 53,Pelesenan Kenderaan,15-Jan-26,CCB BIL 1/2026,CCB/2026/L/002,"PERLUASAN PEMBELIAN BUTIRAN MAKLUMAT KENDERAAN (INSURANS) DI SALURAN KIOS FASA 1, FASA 2 DAN FASA 3",SELESAI,Selesai pada 20/2/2026,10,
@@ -93,9 +87,9 @@ Jangkaan TPA pada 18/06/2026",,17
 ",UAT,"Jangkaan TPA pada 14 Mei 2026
 
 Jangkaan TPA 16/06/2026",10,
-55,Pelesenan Kenderaan,29-Apr-26,CCB BIL 2/2026,CCB/2026/L/004,Pendaftaran dan Pelesenan Semi Treler Open Platform Dengan Sistem Twist Lock,TPA,Jangkaan TPA 11/06/2026,26,
+55,Pelesenan Kenderaan,29-Apr-26,CCB BIL 2/2026,CCB/2026/L/004,Pendaftaran dan Pelesenan Semi Treler Open Platform Dengan Sistem Twist Lock,SELESAI,SELESAI PADA 19/6/2026,26,
 56,Pelesenan Kenderaan,29-Apr-26,CCB BIL 2/2026,CCB/2026/L/005,SEKATAN PERMOHONAN BUKAN WARGANEGARA BAGI PERKHIDMATAN KENDERAAN e-HAILING,SELESAI,Selesai TPA 07/05/2026,8,
-57,Pelesenan Kenderaan,29-Apr-26,CCB BIL 2/2026,CCB/2026/L/006,PENAMBAHBAIKAN MODUL PENGISYTIHARAN LKM KENDERAAN OKU,BAHARU,Jangkaan TPA 27/08/2026,17,
+57,Pelesenan Kenderaan,29-Apr-26,CCB BIL 2/2026,CCB/2026/L/006,PENAMBAHBAIKAN MODUL PENGISYTIHARAN LKM KENDERAAN OKU,SRS,Jangkaan TPA 27/08/2026,17,
 58,Pelesenan Kenderaan,29-Apr-26,CCB BIL 2/2026,CCB/2026/L/007,"PENAMBAHBAIKAN NOTIFIKASI LKM, PEMBAHARUAN LKM e-HAILING DAN PAPARAN VOC SERTA LKM KENDERAAN PERDAGANGAN DI MyJPJ DAN PORTAL AWAM JPJ",SRS,"Fasa 1: Notifikasi LKM = Jangkaan UAT 16/06/2026
 Fasa 2: Pembaharuan LKM eHailing = Pembangunan
 Fasa 3: Kenderaan Perdagangan = Requirement
@@ -150,7 +144,7 @@ Selesai TPA 30/4/2026",51,
 10,Penguatkuasa,14-Jan-25,CCB BIL 1/2025,CCB/2025/K/002,"Penambahbaikan senarai hitam bagi Saman AwAS 53A, Notis 114, dan Notis 115
 ",SELESAI,Selsai pada 15/7/2025,43.5,
 11,Penguatkuasa,9-Apr-25,CCB BIL 2/2025,CCB/2025/K/003,Penambahbaikan mySIKAP Bagi Pengesahan Biometrik Menggunakan Perkakasan Smart Reader Model Datasonic DSR 1945.,SELESAI,Selesai TPA 21/05/2026  (Pilot BK HQ),,66
-12,Penguatkuasa,9-Apr-25,CCB BIL 2/2025,CCB/2025/K/004,Penambahbaikan SmED 2.0,UAT,"Jangkaan TPA pada 21 Mei 2026
+12,Penguatkuasa,9-Apr-25,CCB BIL 2/2025,CCB/2025/K/004,Penambahbaikan SmED 2.0,TPA,"Jangkaan TPA pada 21 Mei 2026
 
 Jangkaan UAT 10-11/6/2026",,83
 13,Penguatkuasa,12-Jun-25,CCB BIL 3/2025,CCB/2025/K/005,Integrasi Sistem mySIKAP dan HS-WiM.,SELESAI,Selesai TPA 09/04/2026,96,
@@ -161,7 +155,7 @@ Jangkaan UAT 10-11/6/2026",,83
 18,Penguatkuasa,20-Sep-24,CCB BIL 4/2025,CCB/2025/K/010,Penambahbaikan Semakan Demerit di MyJPJ,SELESAI,Selesai pada 2 Disember 2025,,29
 19,Penguatkuasa,19-Nov-25,CCB BIL 5/2025,CCB/2025/K/011,Penambahbaikan Menu Pegwujudan Rekod Pertuduhan eKehakiman,SELESAI,Selesai pada 17 Disember 2025,8,
 20,Penguatkuasa,19-Nov-25,CCB BIL 5/2025,CCB/2025/K/012,Senarai Hitam Kenderaan Motor Asing Ke Atas Nombor Pendaftaran Dan Nombor Chasis (Thailand Dan Singapura),SELESAI,Selesai pada 16/1/2026,12,
-21,Penguatkuasa,19-Dec-25,CCB BIL 6/2025,CCB/2025/K/013,Penambahbaikan Sistem Mata Demerit,PEMBANGUNAN,"FASA 1 - PEMUTIHAN MATA: SELESAI (8/1/2026)
+21,Penguatkuasa,19-Dec-25,CCB BIL 6/2025,CCB/2025/K/013,Penambahbaikan Sistem Mata Demerit,SDD,"FASA 1 - PEMUTIHAN MATA: SELESAI (8/1/2026)
 FASA 2 - PEMBANGUNAN: SDD (TPA11/6/2026)
 
 Fasa 1 Selesai TPA 31/12/2025
@@ -187,13 +181,9 @@ selesai pada 6/9/2024",91,
 6,Kejuruteraan Automotif,12-Jun-25,CCB BIL 3/2025,CCB/2025/KA/002,Pelarasan Had Berat Kenderaan Penggerak Utama dan Semi Trailer Kontena (SKO).,SELESAI,Selesai pada 27/6/2025,19,
 7,Kejuruteraan Automotif,20-Sep-24,CCB BIL 4/2025,CCB/2025/KA/003,Integrasi Data Pemeriksaan Tukar Hak Milik (M.V.15),PEMBANGUNAN,"78 manday (Kos ditanggung oleh Syarikat PPKM)
 
-Carro - Jangkaan TPA pada 21 Mei 2026
-Carsome - Jangkaan TPA pada Julai 2026
-Car Medic - Jangkaan TPA pada Julai 2026
-
-Carro - TPA 21/05/2026
-Carsome - SIT rancang 16/06/2006
-Car Medic - SRS",,0
+CARRO: MONITORING
+CARSOME: UAT
+CAR MEDIC: PEMBANGUNAN",,0
 8,Kejuruteraan Automotif,19-Nov-25,CCB BIL 5/2025,CCB/2025/KA/004,Pembangunan Sistem Pengemaskinian Pemantauan Sistem Speed Limitation Device (SLD),SRS,"Perbincangan telah diadakan bersama Bahagian Teknologi Digital (BTD), Bahagian Kejuruteraan Automotif  dan Bahagian Penguatkuasa. Perbincangan tersebut telah meneliti secara terperinci aspek operasi, keperluan penguatkuasaan serta keperluan pemantauan harian agar sistem yang dibangunkan dapat menyelesaikan isu-isu semasa yang sedang dihadapi. Pembentangan yang dijadualkan pada 03 Disember 2025 kepada Dato’ Ketua Pengarah JPJ telah ditangguhkan.
 
 Fasa 1
@@ -202,9 +192,10 @@ Fasa 2
 1. Data Migrasi dari Google Form
 2. Pembangunan Sistem",56,
 9,Kejuruteraan Automotif,19-Nov-25,CCB BIL 5/2025,CCB/2025/KA/005,Integrasi Data Pemeriksaan Kenderaan Oleh PPKM,PEMBANGUNAN,"Kos ditanggung oleh syarikat (28mandays each)
-Beriman Gold: Jangkaan TPA Mac 2027
-Pakatan Petroleum:  Jangkaan TPA Mac 2027
-Wawasan Bintang:  Jangkaan TPA Mac 2027",,0
+
+BERIMAN GOLD: PEMBANGUNAN
+PAKATAN PETROLEUM: PEMBANGUNAN
+WAWASAN BINTANG: PEMBANGUNAN",,0
 10,Kejuruteraan Automotif,19-Nov-25,CCB BIL 5/2025,CCB/2025/KA/006,Perubahan Aliran Proses Urus Niaga Pengubahsuaian Kenderaan Tanpa Menggunakan Business Process Manager (Workflow),SELESAI,"HTP: 45, JPJ: 7
 
 Selesai TPA 21/05/2026",45,
@@ -215,8 +206,11 @@ Selesai TPA pada 9/4/2026",41,
 2,Pelesenan Pemandu,5-Jun-24,CCB Bil 1/2024,CCB/2024/M/002,CR Wujudkan Web Service Baharu Bagi Menggantikan Cron Job Untuk Penghantaran Data Tempahan Ujian Secara Walk-In di Pusat Ujian (e-Khidmat dan Institut Memandu) dan menghantar Keputusan Ujian secara terus ke MySIKAP (tidak menggunakan cron job),SELESAI,selesai pada 27/9/2024,14,
 3,Pelesenan Pemandu,29-Aug-24,CCB BIL 3/2024,CCB/2024/M/003,Program Khas Peralihan Lesen Memandu Motosikal Kelas B2/ B1 Kepada Kelas B,SELESAI,Selesai pada 30/9/2024,60,
 4,Pelesenan Pemandu,29-Aug-24,CCB BIL 3/2024,CCB/2024/M/004,Pindaan tandatangan Ketua Pengarah Jabatan Pengangkutan Jalan Malaysia,SELESAI,selesai pada 8/8/2024,6,
-5,Pelesenan Pemandu,29-Aug-24,CCB BIL 3/2024,CCB/2024/M/005,Lesen Vokasional Kenderaan Barangan (P-Hailing),SDD,"MIROS - Jangkaan TPA pada Jun 2026
-PERKESO - Jangkaan TPA pada Ogos 2026",40,
+5,Pelesenan Pemandu,29-Aug-24,CCB BIL 3/2024,CCB/2024/M/005,Lesen Vokasional Kenderaan Barangan (P-Hailing),SIT,"MIROS - Jangkaan TPA pada Ogos 2026
+PERKESO - Jangkaan TPA pada Ogos 2026
+
+MIROS: SIT
+PERKESO: SIT",40,
 6,Pelesenan Pemandu,29-Aug-24,CCB BIL 3/2024,CCB/2024/M/006,Menutup transaksi pembaharuan di Portal Awam mySIKAP dan Aplikasi MyJPJ Bagi Kategori Pemegang Pengenalan Diri MyKAS dan Pasport,SELESAI,selesai pada 13/9/2024,14,
 7,Pelesenan Pemandu,24-Sep-24,CCB KHAS BIL 1/2024,CCB/2024/M/007,"Sekatan Permohonan SPIM(Vokasional), SPIM Tambah Kelas, QTI-CDL dan Kurikulum Pendidikan Pemandu (KPP) bagi Pemegang Sijil Pengajar Institut Memandu (SPIM) tanpa kelayakan akademik Sijil Pelajaran Malaysia (SPM)",SELESAI,Selesai pada 10/1/2025,18,
 8,Pelesenan Pemandu,27-Sep-24,CCB KHAS BIL 1/2024,CCB/2024/M/008,Penambahan Maklumat Nombor Siri Lesen Memandu Pada Resit Rasmi,SELESAI,Selesai pada 27/12/2024,28,
@@ -234,24 +228,24 @@ TPA bagi modul Pengurusan Stok telah berjaya dilaksanakan pada 26 Februari 2026.
 15,Pelesenan Pemandu,9-Apr-25,CCB BIL 2/2025,CCB/2025/M/003,Membuang Semakan Maklumat Buku KPP Mengikut Kelas Lesen di Semua Modul mySIKAP Berikutan Ketetapan Dasar Baharu Mengenai Bahagian Pembelajaran Kelas Teori Kurikulum Pendidikan Pemandu (KPP01) Bagi Mendapatkan Lesen Memandu Malaysia (LMM).,SELESAI,Selesai pada 14/3/2025,8,
 16,Pelesenan Pemandu,9-Apr-25,CCB BIL 2/2025,CCB/2025/M/004,Ketetapan Cetakan Kad Lesen Memandu Malaysia (LMM).,SELESAI,Selesai pada 28/1/2026,54,
 17,Pelesenan Pemandu,9-Apr-25,CCB BIL 2/2025,CCB/2025/M/005,KPP01 (Gabungan),SELESAI,Selesai pada 17/10/2025,,163
-18,Pelesenan Pemandu,9-Apr-25,CCB BIL 2/2025,CCB/2025/M/006,Permohonan Kenderaan SKIM/SM3 IM Sebagai Pengangkutan Calon.,GUGUR,"Kelulusan fi belum diperolehi daripada Pejabat YBM Pengangkutan. Dicadangkan CR digugurkan dan masuk Revamp . Menunggu kata putus M.
-",,117
-19,Pelesenan Pemandu,12-Jun-25,CCB BIL 3/2025,CCB/2025/M/007,Notifikasi Tamat Tempoh Lesen Memandu Malaysia (LMM) Melalui Push-notification Di Aplikasi MyJPJ,TPA,"Jangkaan TPA pada 14/5/2026
+18,Pelesenan Pemandu,9-Apr-25,CCB BIL 2/2025,CCB/2025/M/006,Permohonan Kenderaan SKIM/SM3 IM Sebagai Pengangkutan Calon.,SRS,Jangkaan UAT pada 15/7/2026 - 4/8/2026,,117
+19,Pelesenan Pemandu,12-Jun-25,CCB BIL 3/2025,CCB/2025/M/007,Notifikasi Tamat Tempoh Lesen Memandu Malaysia (LMM) Melalui Push-notification Di Aplikasi MyJPJ,TPA,"Jangkaan TPA pada 
 
-Fasa 1 (PDL) : Telah TPA pada 22/05/26
-Fasa 2 (LDL) : Tarikh TPA 18 Jun 2026",30,
+Fasa 1 (PDL) : 22/5/2026  
+Fasa 2 (LDL) : 18/6/2026
+Fasa 3 (CDL) : 2/7/2026
+",30,
 20,Pelesenan Pemandu,12-Jun-25,CCB BIL 3/2025,CCB/2025/M/008,Proses Kerja Permohonan Sijil Pengajar Institut Memandu (SPIM) Secara Online,SELESAI,Selesai pada 8/1/2026,60,
 21,Pelesenan Pemandu,20-Sep-24,CCB BIL 4/2025,CCB/2025/M/009,Pengecualian Fi Cetakan Kad LMM Kepada Pemegang Lesen Dari Kalangan Warga Emas dan OKU,SELESAI,Selesai pada 28/1/2026,44,
-22,Pelesenan Pemandu,20-Sep-24,CCB BIL 4/2025,CCB/2025/M/010,Latihan dan Ujian bagi Program Khas Peralihan Peralihan Lesen Memandu Motosikal Kelas B2/ B1 Kepada Kelas B Pada Hari Yang Berbeza,TPA,"Jadual Baharu TPA : 21 Mei 2026
-Jadual Baharu Go Live  : 22 Mei 2026 berdasarkan asas berikut:
-JKPIM Bil.2/2026 pada 21 April 2026 memutuskan supaya satu Sidang Media YBM/ KP diadakan bagi pengumuman dasar baharu Program Peralihan Lesen B. Sidang Media dijangka pada 11 - 15  Mei 2026 (tertakluk pada perubahan jadual YBM)
+22,Pelesenan Pemandu,20-Sep-24,CCB BIL 4/2025,CCB/2025/M/010,Latihan dan Ujian bagi Program Khas Peralihan Peralihan Lesen Memandu Motosikal Kelas B2/ B1 Kepada Kelas B Pada Hari Yang Berbeza,TPA,"Jadual Baharu TPA : 1 September 2026
+Jadual Baharu Go Live  : 15 September 2026 berdasarkan asas berikut:
+YBM menangguhkan Sidang Media yang dijadualkan pada Julai 2026 ke satu tarikh selepas PRN Johor selesai.
 mengambilkira CR sistem eDriving oleh vendor selepas sidang media pengumuman dasar baharu
 mengambil kira  sesi taklimat dari M,HQ kepada IM dan JPJ Negeri selesai dijalankan",,90
-23,Pelesenan Pemandu,19-Nov-25,CCB BIL 5/2025,CCB/2025/M/011,Permohonan Lesen Belajar Memandu (LDL) Di Aplikasi MyJPJ Dan Permohonan Lesen Memandu Percubaan (PDL) Di Aplikasi MyJPJ Dan Portal mySIKAP,PEMBANGUNAN,"Jangkaan TPA pada 28/5/2026
-
-Pada 20 Mei 2026, pasukan MyJPJ telah melaksanakan Sesi Transfer of Technology (TOT) bersama pasukan Aplikasi MyJPJ Revamp bagi penerimaan terhadap perubahan (changes) yang dilaksanakan bagi April 2026. Pada masa ini, pasukan MyJPJ sedang berada dalam fasa pembangunan bagi Change Request (CR) ini",,74
+23,Pelesenan Pemandu,19-Nov-25,CCB BIL 5/2025,CCB/2025/M/011,Permohonan Lesen Belajar Memandu (LDL) Di Aplikasi MyJPJ Dan Permohonan Lesen Memandu Percubaan (PDL) Di Aplikasi MyJPJ Dan Portal mySIKAP,PEMBANGUNAN,Jangkaan UAT pada Julai 2026,,74
 24,Pelesenan Pemandu,19-Nov-25,CCB BIL 5/2025,CCB/2025/M/012,Platform Permohonan Subsidi RON95 (BUDI95) Bagi Warganegara Malaysia Yang Memiliki Lesen Memandu Singapura,SELESAI,Selesai pada 15/10/2025,,15
-25,Pelesenan Pemandu,15-Dis-2025,CCB BIL 6/2025,CCB/2025/M/013,Semakan Rekod Pemeriksaan Kesihatan Secara Dalam Talian ,GUGUR,"Fungsi ini akan dimasukkan di dalam projek Revamp. Pemakluman untuk memindahkan pelaksanaan ke projek Revamp telah dimaklumkan dalam Mesyuarat Pelaksanaan Program Pemandu Sihat dan Selamat yang diadakan pada 30 April 2026, melibatkan pihak JPJ, PERKESO dan KOOP MMA.",,60
+25,Pelesenan Pemandu,15-Dis-2025,CCB BIL 6/2025,CCB/2025/M/013,Semakan Rekod Pemeriksaan Kesihatan Secara Dalam Talian ,SDD,"UAT Dalam Proses (Jangkaan: 15/07/2026). 
+Sedang memperincikan user interface dan pangkalan data bersama PERKESO dan HTP bagi pengintegrasian Sistem MESAS dengan Sistem mySIKAP. ",,60
 1,Korporat dan Perancangan Strategik,11-Jul-24,CCB Bil 2/2024,CCB/2024/C/001,Penambahbaikan Modul Urusniaga Kios eRenewal Untuk Tujuan POC,SELESAI,selesai pada 3/7/2024,,82
 2,Korporat dan Perancangan Strategik,11-Jul-24,CCB Bil 2/2024,CCB/2024/C/002,Persediaan Go-Live Portal Rasmi JPJ baharu,SELESAI,Selesai pada 19/11/2025,,0
 3,Korporat dan Perancangan Strategik,29-Aug-24,CCB BIL 3/2024,CCB/2024/C/003,Pengintegrasian Gerbang Perkhidmatan Digital Bersepadu Kerajaan (MyGovLah) dengan Sistem mySIKAP JPJ Malaysia,SELESAI,Selesai pada 18/12/2024,15,
@@ -267,19 +261,22 @@ Pada 20 Mei 2026, pasukan MyJPJ telah melaksanakan Sesi Transfer of Technology (
 11,Korporat dan Perancangan Strategik,12-Jun-25,CCB BIL 3/2025,CCB/2025/C/005,Pengintegrasian Aplikasi Transport Exchange System (TES) oleh Syarikat ANSA Digital Sdn. Bhd. dengan Sistem mySIKAP JPJ.,SELESAI,Selesai pada 15/12/2025,,69
 12,Korporat dan Perancangan Strategik,12-Jun-25,CCB BIL 3/2025,CCB/2025/C/006,Kemaskini Gambar eLMM Secara Automatik Dalam MyJPJ (Webservice MySIKAP).,SELESAI,Jangkaan TPA pada 29/12/2025,32,
 13,Korporat dan Perancangan Strategik,12-Jun-25,CCB BIL 3/2025,CCB/2025/C/007,Penambahbaikan Audit Trail JPJeid (ID Awam) -  Pertukaran Emel (Semua Saluran).,SELESAI,Selesai pada 5/6/2025,10,
-14,Korporat dan Perancangan Strategik,12-Jun-25,CCB BIL 3/2025,CCB/2025/C/008,Pengintegrasian Portal E-Renewal Nile Tech dengan Sistem mySIKAP JPJ,SDD,"mayday 53 (ditanggung oleh pihak syarikat)
+14,Korporat dan Perancangan Strategik,12-Jun-25,CCB BIL 3/2025,CCB/2025/C/008,Pengintegrasian Portal E-Renewal Nile Tech dengan Sistem mySIKAP JPJ,SIT,"mayday 53 (ditanggung oleh pihak syarikat)
 
-Jangkaan TPA pada 25/6/2026",,0
+Jangkaan TPA pada 23/7/2026",,0
 15,Korporat dan Perancangan Strategik,20-Sep-24,CCB BIL 4/2025,CCB/2025/C/009,"Penambahbaikan Urus Niaga dalam Kios Fasa 1 JPJ (12  urus niaga)",SELESAI,Selesai pada 31/12/2025,0,
-16,Korporat dan Perancangan Strategik,19-Nov-25,CCB BIL 5/2025,CCB/2025/C/010,Menyahaktifkan Keperluan Nombor Rujukan Bagi Kategori ID Awam Individu Dan Integrasi Dengan myIDENTITY,UAT,Jangkaan TPA pada 7/5/2026,15,
+16,Korporat dan Perancangan Strategik,19-Nov-25,CCB BIL 5/2025,CCB/2025/C/010,Menyahaktifkan Keperluan Nombor Rujukan Bagi Kategori ID Awam Individu Dan Integrasi Dengan myIDENTITY,UAT,Jangkaan re-UAT: 24  Jun 2026,15,
 17,Korporat dan Perancangan Strategik,19-Nov-25,CCB BIL 5/2025,CCB/2025/C/011,Skop Tambahan Struktur Data Bagi Pengintegrasian Aplikasi MyGOV Dengan Sistem mySIKAP JPJ,DITANGGUHKAN,"Kos Ditanggung oleh MyGOV (55 mandays - RM93k
 
-Jangkaan TPA pada26/2/2026",0,0
-18,Korporat dan Perancangan Strategik,19-Nov-25,CCB BIL 5/2025,CCB/2025/C/012,Pengintegrasian Sistem Transport Exchange System (TES) Oleh Syarikat Ansa Digital Sdn. Bhd. Dengan Sistem mySIKAP JPJ,SDD,"Intergrasi Sistem TES: Jangkaan TPA pada 7/5/2026
-MyJPJ: Jangkaan TPA pada 21 Mei 2026",,
-19,Korporat dan Perancangan Strategik,19-Dec-25,CCB BIL 6/2025,CCB/2025/C/013,"Kemaskini Profil Pengguna (No. Telefon, Email Dan Alamat Terkini)",SIT,Jangkaan TPA pada 14/5/2026,,
-20,Korporat dan Perancangan Strategik,24-Feb-26,CCB BIL 1/2026,CCB/2026/C/001,PENDAFTARAN ID mySIKAP KEPADA BUKAN WARGANEGARA UNTUK MEMBENARKAN AKSES DAN URUS NIAGA DALAM APLIKASI MyJPJ. ,PEMBANGUNAN,Jangkaan TPA pada 4/6/2026,,
-21,Korporat dan Perancangan Strategik,24-Feb-26,CCB BIL 1/2026,CCB/2026/C/002,PENGINTEGRASIAN SISTEM NIISe JIM DENGAN SISTEM mySIKAP JPJ,SRS,Jangkaan TPA pada 14/5/2026,,
+Jangkaan TPA pada26/2/2026
+
+Akan dibangunkan di pembangunan Sistem Revamp
+",0,0
+18,Korporat dan Perancangan Strategik,19-Nov-25,CCB BIL 5/2025,CCB/2025/C/012,Pengintegrasian Sistem Transport Exchange System (TES) Oleh Syarikat Ansa Digital Sdn. Bhd. Dengan Sistem mySIKAP JPJ,SDD,"INTEGRASI SISTEM TES: SIT
+PAUTAN DALAM MyJPJ: SELESAI",,
+19,Korporat dan Perancangan Strategik,19-Dec-25,CCB BIL 6/2025,CCB/2025/C/013,"Kemaskini Profil Pengguna (No. Telefon, Email Dan Alamat Terkini)",UAT,UAT 2 : 23 Jun 2026,,
+20,Korporat dan Perancangan Strategik,24-Feb-26,CCB BIL 1/2026,CCB/2026/C/001,PENDAFTARAN ID mySIKAP KEPADA BUKAN WARGANEGARA UNTUK MEMBENARKAN AKSES DAN URUS NIAGA DALAM APLIKASI MyJPJ. ,SIT,Jangkaan UAT: 24 Julai 2026,,
+21,Korporat dan Perancangan Strategik,24-Feb-26,CCB BIL 1/2026,CCB/2026/C/002,PENGINTEGRASIAN SISTEM NIISe JIM DENGAN SISTEM mySIKAP JPJ,SDD,Jangkaan UAT:  20-24 Julai 2026,,
 22,Korporat dan Perancangan Strategik,29-Apr-26,CCB BIL 2/2026,CCB/2026/C/003,PENGINTEGRASIAN SISTEM e-ROADS DENGAN SISTEM mySIKAP JABATAN PENGANGKUTAN JALAN MALAYSIA.,GUGUR,Akan dilaksanakan dalam pembangunan sistem Revamp,,
 1,Akademi JPJ,6-Aug-25,CCB BIL 4/2025,"CCB/2025/A/001","Integrasi Data Profiling Kakitangan JPJ, Single Sign On (SSO) Dan Penmpatan myJBakat Di Dalam Portal Employee JPJ",SELESAI,"Program ICP mySIKAP
 
