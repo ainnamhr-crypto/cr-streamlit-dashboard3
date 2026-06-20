@@ -409,7 +409,7 @@ fig_bahagian_status.update_layout(
     yaxis_title="Bahagian",
     legend_title_text="Status",
     xaxis=dict(
-        range=[0, bahagian_pivot["Jumlah CR"].max() + 8]
+        range=[0, bahagian_pivot["Total"].max() + 8]
     )
 )
 
@@ -419,7 +419,7 @@ fig_bahagian_status.add_trace(
         y=bahagian_pivot["Bahagian"],
         x=bahagian_pivot["Total"] + 1,
         mode="text",
-        text=["Total: " + str(int(x)) for x in bahagian_pivot["Total"]],
+        text=["Jumlah CR: " + str(int(x)) for x in bahagian_pivot["Total"]],
         textposition="middle right",
         textfont=dict(
             size=13,
