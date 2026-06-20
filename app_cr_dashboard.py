@@ -732,15 +732,21 @@ if selected_status != "Pilih status...":
         offsite = selected_row.get("Off-Site", "-")
 
         with st.expander(f"Maklumat Lanjut CR: {no_ccb}", expanded=True):
-            st.markdown(f"**Bahagian:** {bahagian}")
-            st.markdown(f"**CCB:** {ccb}")
-            st.markdown(f"**No. CCB:** {no_ccb}")
-            st.markdown(f"**Status:** {status}")
-            st.markdown(f"**Tajuk CR:** {tajuk}")
-            st.markdown(f"**Tarikh Permohonan:** {tarikh}")
-            st.markdown(f"**Tempoh CR Aktif:** {aging}")
-            st.markdown(f"**Nota:** {nota}")
+    d1, d2 = st.columns(2)
 
+    with d1:
+        st.markdown(f"**Bahagian:** {bahagian}")
+        st.markdown(f"**CCB:** {ccb}")
+        st.markdown(f"**No. CCB:** {no_ccb}")
+        st.markdown(f"**Status:** {status}")
+
+    with d2:
+        st.markdown(f"**Tarikh Permohonan:** {tarikh}")
+
+    st.markdown(f"**Tajuk CR:** {tajuk}")
+    st.markdown(f"**Nota:** {nota}")
+        
+       
 st.markdown('</div>', unsafe_allow_html=True)
 
 # =========================
