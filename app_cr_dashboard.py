@@ -443,9 +443,10 @@ st.plotly_chart(
     fig_bahagian_status,
     use_container_width=True,
     key="chart_bahagian_status_full_row",
-    st.caption("Nota: Jumlah keseluruhan Permohonan CR bagi setiap bahagian.")
+    config={"displayModeBar": False}
 )
 
+st.caption("Nota: Nombor tebal di hujung kanan menunjukkan jumlah keseluruhan CR bagi setiap bahagian.")
 
 
 st.markdown('</div>', unsafe_allow_html=True)
