@@ -116,6 +116,20 @@ header {
     visibility: hidden;
 }
 
+/* Make selectbox look clearer */
+div[data-baseweb="select"] > div {
+    background-color: #FFFFFF;
+    border: 1.5px solid #CBD5E1;
+    border-radius: 12px;
+    min-height: 48px;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+}
+
+div[data-baseweb="select"] > div:hover {
+    border-color: #2563EB;
+    box-shadow: 0 3px 10px rgba(37, 99, 235, 0.12);
+}
+
 </style>
 """, unsafe_allow_html=True)
 
