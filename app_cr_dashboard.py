@@ -44,25 +44,32 @@ st.markdown("""
 <style>
 
 .stApp {
-    background: linear-gradient(180deg, #0F172A 0%, #1E293B 100%);
+    background: linear-gradient(180deg, #F8FAFC 0%, #EEF2F7 100%);
 }
 
 .block-container {
     padding-top: 1.5rem;
     padding-bottom: 2rem;
-.main-title {font-size: 34px;
+    
+.main-title {
+    font-size: 34px;
     font-weight: 800;
     margin-bottom: 0px;
-    color: #F8FAFC;}
-.sub-title {font-size: 15px;
-    color: #CBD5E1;
-    margin-bottom: 22px;}
+    color: #1F2937;
+}
+
+.sub-title {
+    font-size: 15px;
+    color: #667085;
+    margin-bottom: 22px;
+}
+
 .metric-card {
     background: #FFFFFF;
     border: 1px solid #E9EEF5;
     border-radius: 18px;
     padding: 18px 20px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+    box-shadow: 0 4px 14px rgba(18, 38, 63, 0.08);
     border-top: 6px solid var(--accent-color);
 }
 
@@ -74,12 +81,13 @@ st.markdown("""
 .metric-card.rate { --accent-color: #7C3AED; }
 .metric-label {font-size: 13px; color: #667085; font-weight: 600;}
 .metric-value {font-size: 32px; font-weight: 800; margin-top: 4px;}
+
 .section-card {
     background: #FFFFFF;
     border: 1px solid #E9EEF5;
     border-radius: 18px;
     padding: 18px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+    box-shadow: 0 4px 14px rgba(18, 38, 63, 0.07);
     margin-bottom: 16px;
 }
 
