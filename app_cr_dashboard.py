@@ -404,10 +404,13 @@ fig_bahagian_status.add_trace(
 fig_bahagian_status.update_layout(
     barmode="stack",
     height=520,
-    margin=dict(l=10, r=10, t=30, b=10),
+    margin=dict(l=10, r=30, t=30, b=10),
     xaxis_title="Jumlah CR",
     yaxis_title="Bahagian",
     legend_title_text="Status",
+    xaxis=dict(
+        range=[0, bahagian_pivot["Total"].max() + 5]
+    )
 )
 
 st.plotly_chart(
@@ -416,6 +419,22 @@ st.plotly_chart(
     key="chart_bahagian_status_full_row"
 )
 
+# Tambah total CR di hujung setiap bar
+fig_bahagian_status.add_trace(
+    go.Scatter(
+        y=bahagian_pivot["Bahagian"],
+        x=bahagian_pivot["Total"] + 1,
+        mode="text",
+        text=["Total: " + str(int(x)) for x in bahagian_pivot["Total"]],
+        textposition="middle right",
+        textfont=dict(
+            size=13,
+            color="#334155",
+        ),
+        showlegend=False,
+        hoverinfo="skip",
+    )
+)
 
 st.markdown('</div>', unsafe_allow_html=True)
 
