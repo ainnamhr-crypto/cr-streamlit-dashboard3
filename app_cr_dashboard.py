@@ -130,6 +130,12 @@ div[data-baseweb="select"] > div:hover {
     box-shadow: 0 3px 10px rgba(37, 99, 235, 0.12);
 }
 
+.section-divider {
+    border: none;
+    border-top: 1px solid rgba(148, 163, 184, 0.35);
+    margin: 28px 0 22px 0;
+}
+
 </style>
 """, unsafe_allow_html=True)
 
@@ -272,6 +278,7 @@ if search_text:
 # =========================
 # KPI METRICS
 # =========================
+st.markdown('<hr class="section-divider">', unsafe_allow_html=True)
 total_cr = len(filtered)
 
 selesai = (filtered["Status Clean"] == "SELESAI").sum()
