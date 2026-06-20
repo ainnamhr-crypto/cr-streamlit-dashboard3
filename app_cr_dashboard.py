@@ -681,13 +681,69 @@ if selected_status != "Pilih status...":
         filtered["Status Clean"] == selected_status
     ].copy()
 
+    status_detail = status_detail.sort_values(["Bahagian", "Bil"])
+
+    st.caption(f"Jumlah CR bagi status {selected_status}: {len(status_detail)}")
+
+    display_cols = [
+        col for col in [
+            "Bil", "Bahagian", "Tarikh Permohonan", "CCB",
+            "No. CCB", "Status", "Tajuk CR"
+        ]
+        if col in status_detail.columns
+    ]
+
     st.dataframe(
-        status_detail[
-            ["Bil", "Bahagian", "Tarikh Permohonan", "CCB", "No. CCB", "Status", "Tajuk CR", "Nota"]
-        ],
+        status_detail[display_cols],
         use_container_width=True,
         hide_index=True
     )
+
+    status_detail["Pilihan CR"] = (
+        status_detail["No. CCB"].astype(str)
+        + " | "
+        + status_detail["Bahagian"].astype(str)
+        + " | "
+        + status_detail["Tajuk CR"].astype(str).str.slice(0, 80)
+    )
+
+    selected_cr = st.selectbox(
+        "Pilih CR untuk lihat maklumat lanjut",
+        ["Pilih CR..."] + status_detail["Pilihan CR"].tolist(),
+        key=f"selected_cr_status_{selected_status}"
+    )
+
+    if selected_cr != "Pilih CR...":
+        selected_row = status_detail[
+            status_detail["Pilihan CR"] == selected_cr
+        ].iloc[0]
+
+        bil = selected_row.get("Bil", "-")
+        bahagian = selected_row.get("Bahagian", "-")
+        tarikh = selected_row.get("Tarikh Permohonan", "-")
+        ccb = selected_row.get("CCB", "-")
+        no_ccb = selected_row.get("No. CCB", "-")
+        status = selected_row.get("Status", "-")
+        tajuk = selected_row.get("Tajuk CR", "-")
+        nota = selected_row.get("Nota", "-")
+        hari = selected_row.get("Hari Berlalu", "-")
+        aging = selected_row.get("Aging Bucket", "-")
+        onsite = selected_row.get("On-Site", "-")
+        offsite = selected_row.get("Off-Site", "-")
+
+        with st.expander(f"Maklumat Lanjut CR: {no_ccb}", expanded=True):
+            st.markdown(f"**Bil:** {bil}")
+            st.markdown(f"**Bahagian:** {bahagian}")
+            st.markdown(f"**CCB:** {ccb}")
+            st.markdown(f"**No. CCB:** {no_ccb}")
+            st.markdown(f"**Status:** {status}")
+            st.markdown(f"**Tajuk CR:** {tajuk}")
+            st.markdown(f"**Tarikh Permohonan:** {tarikh}")
+            st.markdown(f"**Hari Berlalu:** {hari}")
+            st.markdown(f"**Tempoh CR Aktif:** {aging}")
+            st.markdown(f"**On-Site:** {onsite}")
+            st.markdown(f"**Off-Site:** {offsite}")
+            st.markdown(f"**Nota:** {nota}")
 
 st.markdown('</div>', unsafe_allow_html=True)
 
