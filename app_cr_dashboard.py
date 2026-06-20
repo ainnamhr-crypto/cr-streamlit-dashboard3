@@ -403,27 +403,36 @@ fig_bahagian_status.add_trace(
 
 fig_bahagian_status.update_layout(
     barmode="stack",
-    height=520,
-    margin=dict(l=10, r=80, t=30, b=10),
+    height=560,
+    margin=dict(l=10, r=120, t=30, b=80),
     xaxis_title="Jumlah CR",
     yaxis_title="Bahagian",
     legend_title_text="Status",
+    legend=dict(
+        orientation="h",
+        yanchor="top",
+        y=-0.18,
+        xanchor="center",
+        x=0.5
+    ),
     xaxis=dict(
-        range=[0, bahagian_pivot["Total"].max() + 8]
+        range=[0, bahagian_pivot["Total"].max() + 10]
     )
 )
 
 # Tambah total CR di hujung setiap bar
+total_label_x = bahagian_pivot["Total"].max() + 2
+
 fig_bahagian_status.add_trace(
     go.Scatter(
         y=bahagian_pivot["Bahagian"],
-        x=bahagian_pivot["Total"] + 1,
+        x=[total_label_x] * len(bahagian_pivot),
         mode="text",
-        text=["Jumlah CR: " + str(int(x)) for x in bahagian_pivot["Total"]],
+        text=["<b>Jumlah CR: " + str(int(x)) + "</b>" for x in bahagian_pivot["Total"]],
         textposition="middle right",
         textfont=dict(
-            size=13,
-            color="#334155",
+            size=14,
+            color="#111827",
         ),
         showlegend=False,
         hoverinfo="skip",
