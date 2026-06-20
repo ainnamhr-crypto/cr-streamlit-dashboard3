@@ -597,9 +597,9 @@ fig_bahagian_status.add_trace(
 )
 
 st.plotly_chart(
-    fig_aging,
+    fig_bahagian_status,
     use_container_width=True,
-    key="chart_aging_bucket_full_row",
+    key="chart_bahagian_status_full_row",
     config={"displayModeBar": False}
 )
 
@@ -796,9 +796,9 @@ fig_aging.update_layout(
 )
 
 st.plotly_chart(
-    fig_bahagian_status,
+    fig_aging,
     use_container_width=True,
-    key="chart_bahagian_status_full_row",
+    key="chart_aging_bucket_full_row",
     config={"displayModeBar": False}
 )
 
