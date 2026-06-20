@@ -130,12 +130,6 @@ div[data-baseweb="select"] > div:hover {
     box-shadow: 0 3px 10px rgba(37, 99, 235, 0.12);
 }
 
-.section-divider {
-    border: none;
-    border-top: 1px solid #D8E0EA;
-    margin: 22px 0;
-}
-
 </style>
 """, unsafe_allow_html=True)
 
@@ -338,12 +332,11 @@ for col, (label, value, card_class) in zip(cols2, metrics_row2):
             unsafe_allow_html=True,
         )
 
-st.markdown('<hr class="section-divider">', unsafe_allow_html=True)
 
 # =========================
 # CR MENGIKUT BAHAGIAN
 # =========================
-st.markdown('<div class="section-card">', unsafe_allow_html=True)
+
 st.subheader("CR Mengikut Bahagian")
 
 bahagian_status = filtered.copy()
@@ -492,7 +485,7 @@ st.markdown('</div>', unsafe_allow_html=True)
 # =========================
 # STATUS BREAKDOWN
 # =========================
-st.markdown('<div class="section-card">', unsafe_allow_html=True)
+
 st.subheader("Pecahan Mengikut Status")
 
 status_summary = (
@@ -573,7 +566,7 @@ st.markdown('</div>', unsafe_allow_html=True)
 # =========================
 # PRIORITY KPI
 # =========================
-st.markdown('<div class="section-card">', unsafe_allow_html=True)
+
 st.subheader("Tempoh CR Aktif")
 
 active_status = ["BAHARU", "SRS", "SDD", "TPA", "PEMBANGUNAN", "SIT", "UAT"]
@@ -602,8 +595,6 @@ for col, (label, value) in zip([p1, p2], priority_metrics):
             unsafe_allow_html=True,
         )
 
-
-st.markdown('<hr class="section-divider">', unsafe_allow_html=True)
 
 # =========================
 # AGING BUCKET - CR AKTIF
@@ -726,7 +717,7 @@ st.markdown('</div>', unsafe_allow_html=True)
 # =========================
 # SENARAI CR KESELURUHAN
 # =========================
-st.markdown('<div class="section-card">', unsafe_allow_html=True)
+
 st.subheader("Senarai CR Keseluruhan")
 
 bahagian_options = ["Pilih Bahagian...", "Semua Bahagian"] + sorted(
