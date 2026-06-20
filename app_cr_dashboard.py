@@ -492,7 +492,7 @@ st.markdown('</div>', unsafe_allow_html=True)
 # =========================
 # STATUS BREAKDOWN
 # =========================
-
+st.markdown('<hr class="section-divider">', unsafe_allow_html=True)
 st.subheader("Pecahan Mengikut Status")
 
 status_summary = (
