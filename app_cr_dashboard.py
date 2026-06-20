@@ -442,7 +442,7 @@ fig_bahagian_status.add_trace(
 st.plotly_chart(
     fig_bahagian_status,
     use_container_width=True,
-    key="chart_bahagian_status_full_row"
+    key="chart_bahagian_status_full_row",
     st.caption("Nota: Jumlah keseluruhan Permohonan CR bagi setiap bahagian.")
 )
 
