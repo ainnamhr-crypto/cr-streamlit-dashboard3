@@ -42,6 +42,7 @@ st.set_page_config(
 # =========================
 st.markdown("""
 <style>
+
 .stApp {
     background: linear-gradient(180deg, #0F172A 0%, #1E293B 100%);
 }
@@ -110,9 +111,6 @@ header {
 </style>
 """, unsafe_allow_html=True)
 
-.stApp {
-    background: linear-gradient(180deg, #0F172A 0%, #1E293B 100%);
-}
 
 # =========================
 # HELPER FUNCTION
