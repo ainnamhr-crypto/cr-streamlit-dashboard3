@@ -409,7 +409,7 @@ fig_bahagian_status.update_layout(
     yaxis_title="Bahagian",
     legend_title_text="Status",
     xaxis=dict(
-        range=[0, bahagian_pivot["Total"].max() + 8]
+        range=[0, bahagian_pivot["Jumlah CR"].max() + 8]
     )
 )
 
