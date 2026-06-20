@@ -5,7 +5,7 @@ Bil,Bahagian,Tarikh Permohonan,CCB,No. CCB,Tajuk CR,Status, Nota,On-Site,Off-Sit
 4,Pelesenan Kenderaan,5-Jun-24,CCB Bil 1/2024,CCB/2024/L/004,Penambahbaikan menu ICP,SELESAI,Selesai pada 28/3/2025,26,
 5,Pelesenan Kenderaan,11-Jul-24,CCB Bil 2/2024,CCB/2024/L/005,"Cetakan LKM Bentuk Baharu Bagi LPS, KIOS & ICP",SELESAI,Selesai pada 21/11/2024,,20
 6,Pelesenan Kenderaan,11-Jul-24,CCB Bil 2/2024,   ,Pengecualian Pemeriksaan Berkala Kenderaan Sekolah Memandu Untuk Tahun Pertama Dan Kedua,GUGUR,CR digugurkan kerana pihak PUSPAKOM telah menghantar data pemeriksaan awalan dengan betul. ,,
-7,Pelesenan Kenderaan,11-Jul-24,`,CCB/2024/L/007,Penambahbaikan Urus Niaga Tukar Hak Milik Selain Sukarela,DITANGGUHKAN,"Jangkaan TPA pada 28/5/2026
+7,Pelesenan Kenderaan,11-Jul-24,CCB Bil 2/2024,CCB/2024/L/007,Penambahbaikan Urus Niaga Tukar Hak Milik Selain Sukarela,DITANGGUHKAN,"Jangkaan TPA pada 28/5/2026
 
 Akan di bawa ke revamp mengambil kira keperluan data migration revamp kerana terdapat pindaan pada table (alter table)",20,
 8,Pelesenan Kenderaan,11-Jul-24,CCB Bil 2/2024,CCB/2024/L/008,Pindaan Fi Sijil Pemilikan Kenderaan (VOC) Selaras Dengan Pewartaan Kerajaan Malaysia Bagi Kaedah-kaedah Kenderaan Motor (Pendaftaran Dan Pelesenan) (Pindaan Jadual Keempat) 2024,SELESAI,Selesai pada 2/7/2024,0,
@@ -36,7 +36,7 @@ Akan di bawa ke revamp mengambil kira keperluan data migration revamp kerana ter
 ",SELESAI,Selesai pada 8/8/2025,13,
 32,Pelesenan Kenderaan,9-Apr-25,CCB BIL 2/2025,CCB/2025/L/003,Penambahbaikan Bagi Urusan Tukar Hak Milik (THM) Mobile.,SELESAI,Selesai pada 31/7/2025,21,
 33,Pelesenan Kenderaan,9-Apr-25,CCB BIL 2/2025,CCB/2025/L/004,Penambahbaikan Perekodan Transaksi Mengikut Saluran Table Audit Trail Dalam Program Log Audit Sistem mySIKAP.,SELESAI,Selesai pada 10/9/2025,24,
-34,Pelesenan Kenderaan,-,CCB BIL 2/2025,CCB/2025/L/005,Pindaan Menu Permit Perubahan Sementara (PPS).,GUGUR,Digugurkan pada CCB Bil 3/2025 ,,
+34,Pelesenan Kenderaan,9-Apr-25,CCB BIL 2/2025,CCB/2025/L/005,Pindaan Menu Permit Perubahan Sementara (PPS).,GUGUR,Digugurkan pada CCB Bil 3/2025 ,,
 35,Pelesenan Kenderaan,9-Apr-25,CCB BIL 2/2025,CCB/2025/L/006,"Sekatan Semakan Nombor Kategori Utama, Premium dan Menarik Dua (2) Digit di JPJ Negeri (Pengarah & Ketua Bahagian Pelesenan Kenderaan).",SELESAI,Selesai pada 2/4/2025,7,
 36,Pelesenan Kenderaan,9-Apr-25,CCB BIL 2/2025,CCB/2025/L/007,JPJeBid Dashboard.,SELESAI,Selesai pada 8/82025,29,
 37,Pelesenan Kenderaan,9-Apr-25,CCB BIL 2/2025,CCB/2025/L/008,Menu Sekatan Nombor Pendaftaran JPJ eBid (In Advance),SELESAI,Selesai pada 1/8/2025,14,
