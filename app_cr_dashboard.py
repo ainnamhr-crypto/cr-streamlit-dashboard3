@@ -552,8 +552,8 @@ fig_bahagian_status.add_trace(
 
 fig_bahagian_status.update_layout(
     barmode="stack",
-    height=650,
-    margin=dict(l=10, r=120, t=30, b=140),
+    height=560,
+    margin=dict(l=10, r=120, t=30, b=80),
     xaxis_title="Jumlah CR",
     yaxis_title="Bahagian",
     legend_title_text="Status",
@@ -561,23 +561,20 @@ fig_bahagian_status.update_layout(
     paper_bgcolor="white",
     font=dict(color="#111827"),
     legend=dict(
-    orientation="h",
-    yanchor="top",
-    y=-0.25,
-    xanchor="center",
-    x=0.5
+        orientation="h",
+        yanchor="top",
+        y=-0.18,
+        xanchor="center",
+        x=0.5
     ),
     xaxis=dict(
-    range=[0, bahagian_pivot["Total"].max() + 10],
-    tickfont=dict(color="#111827", size=11),
-    titlefont=dict(color="#111827", size=13),
-    gridcolor="#E5E7EB",
-),
+        range=[0, bahagian_pivot["Total"].max() + 10],
+        tickfont=dict(color="#111827", size=11),
+        gridcolor="#E5E7EB",
+    ),
     yaxis=dict(
-    tickfont=dict(color="#111827", size=11),
-    titlefont=dict(color="#111827", size=13),
-),
-    
+        tickfont=dict(color="#111827", size=11),
+    ),
 )
 
 # Tambah total CR di hujung setiap bar
@@ -600,9 +597,9 @@ fig_bahagian_status.add_trace(
 )
 
 st.plotly_chart(
-    fig_bahagian_status,
+    fig_aging,
     use_container_width=True,
-    key="chart_bahagian_status_full_row",
+    key="chart_aging_bucket_full_row",
     config={"displayModeBar": False}
 )
 
@@ -790,20 +787,19 @@ fig_aging.update_layout(
     font=dict(color="#111827"),
     xaxis=dict(
         tickfont=dict(color="#111827", size=11),
-        titlefont=dict(color="#111827", size=13),
         tickangle=-35,
     ),
     yaxis=dict(
         tickfont=dict(color="#111827", size=11),
-        titlefont=dict(color="#111827", size=13),
         gridcolor="#E5E7EB",
     ),
 )
 
 st.plotly_chart(
-    fig_aging,
+    fig_bahagian_status,
     use_container_width=True,
-    key="chart_aging_bucket_full_row"
+    key="chart_bahagian_status_full_row",
+    config={"displayModeBar": False}
 )
 
 selected_bucket = st.selectbox(
