@@ -446,8 +446,6 @@ st.plotly_chart(
     config={"displayModeBar": False}
 )
 
-st.caption("Nota: Nombor tebal di hujung kanan menunjukkan jumlah keseluruhan CR bagi setiap bahagian.")
-
 
 st.markdown('</div>', unsafe_allow_html=True)
 
