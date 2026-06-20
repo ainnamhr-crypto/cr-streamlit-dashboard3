@@ -137,6 +137,47 @@ div[data-baseweb="select"] > div:hover {
     margin: 28px 0 22px 0;
 }
 
+# untuk view phone
+@media (max-width: 768px) {
+    .block-container {
+        padding-top: 2rem;
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+
+    .main-title {
+        font-size: 22px;
+        line-height: 1.25;
+        margin-bottom: 14px;
+    }
+
+    .metric-card {
+        padding: 14px 16px;
+        min-height: 110px;
+        margin-bottom: 12px;
+    }
+
+    .metric-label {
+        font-size: 13px;
+        color: #475569;
+    }
+
+    .metric-value {
+        font-size: 30px;
+        color: #111827;
+    }
+
+    .section-card {
+        padding: 12px;
+        border-radius: 14px;
+    }
+
+    h2, h3 {
+        font-size: 22px !important;
+        line-height: 1.25 !important;
+    }
+}
+
 </style>
 """, unsafe_allow_html=True)
 
@@ -448,6 +489,9 @@ fig_bahagian_status.update_layout(
     xaxis_title="Jumlah CR",
     yaxis_title="Bahagian",
     legend_title_text="Status",
+    plot_bgcolor="white",
+    paper_bgcolor="white",
+    font=dict(color="#111827"),
     legend=dict(
         orientation="h",
         yanchor="top",
@@ -458,6 +502,7 @@ fig_bahagian_status.update_layout(
     xaxis=dict(
         range=[0, bahagian_pivot["Total"].max() + 10]
     )
+    
 )
 
 # Tambah total CR di hujung setiap bar
@@ -537,9 +582,12 @@ fig_status.update_traces(
 )
 
 fig_status.update_layout(
-    height=480,
+     height=480,
     margin=dict(l=10, r=10, t=30, b=10),
     legend_title_text="Status",
+    plot_bgcolor="white",
+    paper_bgcolor="white",
+    font=dict(color="#111827"),
     legend=dict(
         orientation="h",
         yanchor="bottom",
@@ -662,6 +710,9 @@ fig_aging.update_layout(
     xaxis_title="Tempoh CR Aktif",
     yaxis_title="Jumlah CR",
     showlegend=False,
+    plot_bgcolor="white",
+    paper_bgcolor="white",
+    font=dict(color="#111827"),
 )
 
 st.plotly_chart(
