@@ -606,7 +606,7 @@ for col, (label, value) in zip([p1, p2], priority_metrics):
 # =========================
 # AGING BUCKET - CR AKTIF
 # =========================
-
+st.write("")
 aging_df = filtered[
     (filtered["Kumpulan Status"] == "Belum Selesai")
     & (filtered["Status"].astype(str).str.upper().str.strip() != "DITANGGUHKAN")
