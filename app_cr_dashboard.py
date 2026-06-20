@@ -48,8 +48,9 @@ st.markdown("""
 }
 
 .block-container {
-    padding-top: 1.5rem;
+    padding-top: 3.5rem;
     padding-bottom: 2rem;
+}
     
 .main-title {
     font-size: 34px;
@@ -113,7 +114,7 @@ footer {
 }
 
 header {
-    visibility: hidden;
+    display: none;
 }
 
 /* Make selectbox look clearer */
