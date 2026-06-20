@@ -735,7 +735,6 @@ if selected_status != "Pilih status...":
     d1, d2 = st.columns(2)
 
     with d1:
-        st.markdown(f"**Bahagian:** {bahagian}")
         st.markdown(f"**CCB:** {ccb}")
         st.markdown(f"**No. CCB:** {no_ccb}")
         st.markdown(f"**Status:** {status}")
