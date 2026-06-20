@@ -219,6 +219,33 @@ div[data-baseweb="select"] > div:hover {
     color: #111827 !important;
 }
 
+/* Selectbox text visibility */
+div[data-baseweb="select"],
+div[data-baseweb="select"] * {
+    color: #111827 !important;
+}
+
+div[data-baseweb="select"] input {
+    color: #111827 !important;
+}
+
+div[data-baseweb="popover"] * {
+    color: #111827 !important;
+    background-color: #FFFFFF !important;
+}
+
+/* Streamlit widget labels */
+.stSelectbox label,
+.stMultiSelect label,
+.stTextInput label,
+.stFileUploader label {
+    color: #111827 !important;
+}
+
+div[data-baseweb="select"] [class*="placeholder"] {
+    color: #475569 !important;
+}
+
 </style>
 """, unsafe_allow_html=True)
 
@@ -541,8 +568,15 @@ fig_bahagian_status.update_layout(
     x=0.5
     ),
     xaxis=dict(
-        range=[0, bahagian_pivot["Total"].max() + 10]
-    )
+    range=[0, bahagian_pivot["Total"].max() + 10],
+    tickfont=dict(color="#111827", size=11),
+    titlefont=dict(color="#111827", size=13),
+    gridcolor="#E5E7EB",
+),
+    yaxis=dict(
+    tickfont=dict(color="#111827", size=11),
+    titlefont=dict(color="#111827", size=13),
+),
     
 )
 
@@ -747,13 +781,23 @@ fig_aging = px.bar(
 
 fig_aging.update_layout(
     height=430,
-    margin=dict(l=10, r=10, t=30, b=10),
+    margin=dict(l=10, r=10, t=30, b=80),
     xaxis_title="Tempoh CR Aktif",
     yaxis_title="Jumlah CR",
     showlegend=False,
     plot_bgcolor="white",
     paper_bgcolor="white",
     font=dict(color="#111827"),
+    xaxis=dict(
+        tickfont=dict(color="#111827", size=11),
+        titlefont=dict(color="#111827", size=13),
+        tickangle=-35,
+    ),
+    yaxis=dict(
+        tickfont=dict(color="#111827", size=11),
+        titlefont=dict(color="#111827", size=13),
+        gridcolor="#E5E7EB",
+    ),
 )
 
 st.plotly_chart(
