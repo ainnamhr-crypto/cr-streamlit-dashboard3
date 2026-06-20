@@ -736,12 +736,12 @@ if selected_status != "Pilih status...":
 
             with d1:
                 st.markdown(f"**Bahagian:** {bahagian}")
-                st.markdown(f"**CCB:** {ccb}")
-                st.markdown(f"**No. CCB:** {no_ccb}")
+                st.markdown(f"**CCB:** {ccb}")                
                 st.markdown(f"**Status:** {status}")
 
             with d2:
                 st.markdown(f"**Tarikh Permohonan:** {tarikh}")
+                st.markdown(f"**No. CCB:** {no_ccb}")
         
             st.markdown(f"**Tajuk CR:** {tajuk}")
             st.markdown(f"**Nota:** {nota}")
