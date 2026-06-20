@@ -343,7 +343,7 @@ for col, (label, value, card_class) in zip(cols2, metrics_row2):
 # =========================
 # CR MENGIKUT BAHAGIAN
 # =========================
-
+st.markdown('<hr class="section-divider">', unsafe_allow_html=True)
 st.subheader("CR Mengikut Bahagian")
 
 bahagian_status = filtered.copy()
