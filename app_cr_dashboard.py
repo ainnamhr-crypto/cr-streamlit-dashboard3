@@ -573,7 +573,7 @@ st.markdown('</div>', unsafe_allow_html=True)
 # =========================
 # PRIORITY KPI
 # =========================
-
+st.markdown('<hr class="section-divider">', unsafe_allow_html=True)
 st.subheader("Tempoh CR Aktif")
 
 active_status = ["BAHARU", "SRS", "SDD", "TPA", "PEMBANGUNAN", "SIT", "UAT"]
@@ -724,7 +724,7 @@ st.markdown('</div>', unsafe_allow_html=True)
 # =========================
 # SENARAI CR KESELURUHAN
 # =========================
-
+st.markdown('<hr class="section-divider">', unsafe_allow_html=True)
 st.subheader("Senarai CR Keseluruhan")
 
 bahagian_options = ["Pilih Bahagian...", "Semua Bahagian"] + sorted(
