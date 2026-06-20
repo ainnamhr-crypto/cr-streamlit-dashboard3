@@ -428,7 +428,7 @@ fig_bahagian_status.add_trace(
         y=bahagian_pivot["Bahagian"],
         x=[total_label_x] * len(bahagian_pivot),
         mode="text",
-        text=["<b>Jumlah CR: " + str(int(x)) + "</b>" for x in bahagian_pivot["Total"]],
+        text=["<b>" + str(int(x)) + "</b>" for x in bahagian_pivot["Total"]],
         textposition="middle right",
         textfont=dict(
             size=14,
@@ -443,6 +443,7 @@ st.plotly_chart(
     fig_bahagian_status,
     use_container_width=True,
     key="chart_bahagian_status_full_row"
+    st.caption("Nota: Jumlah keseluruhan Permohonan CR bagi setiap bahagian.")
 )
 
 
